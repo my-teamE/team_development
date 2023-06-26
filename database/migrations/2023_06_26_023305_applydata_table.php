@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfileTable extends Migration
+class ApplydataTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateProfileTable extends Migration
      */
     public function up()
     {
-        Schema::create('profiels', function (Blueprint $table) {
+        Schema::create('applydata', function (Blueprint $table) {
             $table->id();
-            $table->int('student_id')->unique();
-            $table->string('class');
-            $table->string('github_url')->unique();
-            $table->string('skill');
-            $table->string('comment');
+            $table->integer('student_id')->unique();
+            $table->integer('no');
+            $table->integer('apply_user_code');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile');
+        //
     }
 }
