@@ -1,7 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\toppageController;
+use App\Http\Controllers\profileController;
 
+//toppage
+Route::get('toppage', [toppageController::class, 'index'])->name('toppage');
+
+//post
+Route::get('profile', [profileController::class, 'index']);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +21,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/, function () {
+//      return view('welcom);
+// });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
