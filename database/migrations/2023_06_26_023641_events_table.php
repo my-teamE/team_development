@@ -19,7 +19,7 @@ class EventsTable extends Migration
             $table->integer('no');
             $table->string('title');
             $table->string('tag');
-            $table->integer('message');
+            $table->string('message');
             $table->string('image');
             $table->integer('status');
             $table->string('date');
