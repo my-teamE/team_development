@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class ProfielsTable extends Migration
@@ -22,6 +23,27 @@ class ProfielsTable extends Migration
             $table->string('comment');
             $table->timestamps();
         });
+
+        $qb = DB::table('profiels');
+        $insert = [
+            [
+                'id' => null,
+                'student_id' => 2220399,
+                'class' => 'IE2A',
+                'github_url' => '2220399.github.url',
+                'skill' => 'laravel',
+                'comment' => '頑張ります'
+            ],
+            [
+                'id' => null,
+                'student_id' => 2220415,
+                'class' => 'IE2A',
+                'github_url' => '2220415.github.url',
+                'skill' => 'java',
+                'comment' => 'よろしく'
+            ]
+        ];
+        $qb->insert($insert);
     }
 
     /**
