@@ -11,4 +11,6 @@ class TopPageController extends Controller
     {
   return view('toppage');
     }
+
 }
+

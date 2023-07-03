@@ -3,7 +3,7 @@ window.$ = window.jQuery = require('jquery');
 require('slick-carousel');
 $(function() {
     $('.slider').slick({
-    slidesToShow: 3,
+    slidesToShow: 5,
       autoplay: true,
       dots: true,
       arrows: false,
