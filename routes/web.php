@@ -10,7 +10,7 @@ use App\Http\Controllers\profileController;
 Route::get('toppage', [toppageController::class, 'index'])->name('toppage');
 
 //post
-Route::get('profile', [profileController::class, 'index']);
+Route::get('profile', [profileController::class, 'index'])->name('profile');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,8 +28,6 @@ Route::get('profile', [profileController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
 # test
 Route::get("/postdata", [postDataController::class, "index"]);
 Route::post("/postdata", [postDataController::class, "post"]);

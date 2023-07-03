@@ -1,10 +1,18 @@
 @extends('layouts.layout')
 @section('pageTitle','postpage')
-@section('title','ECC コンミュニティ')
+{{-- @section('title','ECC コンミュニティ') --}}
 @section('content')
-        <section>
             <main>
             <div class="split-container">
+                    {{-- 検索 --}}
+                    <form action="" method="POST">
+                        <div class="flex text-center pt-2" style="padding-left: 42%">
+                         <input class="bg-gray-300 px-2 py-1 rounded-l w-70 text-black" type="search" placeholder=" 検索">
+                                <button style="background: #2196F3;width:30px">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                        </div>
+                    </form>
                     <div class="location-contr" id="" style="padding:20px 0px">
                         <div id="location" class="text-center py-3">
                             <button >開発</button>
@@ -17,19 +25,24 @@
                             <button>過去の制作物</button>
                         </div>
                    </div>
-                <div class="container1 p-2">
+
+                <div class="container1 p-2 " style="background: rgb(38, 36, 36)">
+                    <p style="font-size: 25px; padding-left:25px">過去の代表制作品</p>
                     <div class="slider flex overflow-hidden">
                         <div class="slick-img">
-                            <img src="{{url('/images/upload1.png')}}" alt="Image"/>
+                            <img src="{{url('/images/project1.png')}}" alt="Image"/>
                         </div>
                         <div class="slick-img">
-                            <img src="{{url('/images/upload1.png')}}" alt="Image"/>
+                            <img src="{{url('/images/project2.jpg')}}" alt="Image"/>
                         </div>
                         <div class="slick-img">
-                            <img src="{{url('/images/upload1.png')}}" alt="Image"/>
+                            <img src="{{url('/images/project3.jpg')}}" alt="Image"/>
                         </div>
                         <div class="slick-img">
-                            <img src="{{url('/images/upload1.png')}}" alt="Image"/>
+                            <img src="{{url('/images/student1.jpg')}}" alt="Image"/>
+                        </div>
+                        <div class="slick-img">
+                            <img src="{{url('/images/aaa.jpg')}}" alt=""/>
                         </div>
                         <div class="slick-img">
                             <img src="{{url('/images/upload1.png')}}" alt=""/>
@@ -40,10 +53,11 @@
             @php
                 $count = 0;
             @endphp
-    <div class="flex p-3" id="view-index">
-         @while($count < 4)
- <!-- 一覧画面 -->
-            <div class="photo-list m-10">
+            <h4 class="title" style="font-size:30px;padding:10px  0 0 30px">Project </h4>
+    <section class="grid grid-cols-1 lg:grid-cols-4 gap-10 mb-10" id="view-index">
+         @while($count < 5)
+        <!-- 一覧画面 -->
+            <article class="photo-list m-10">
                 <div class="photo-link  ">
                   <img
                     class="photo-thumb photo-1 "
@@ -53,18 +67,19 @@
                     height="360"
                     alt="button-open"/>
                     <div class="photo-meta">
-                        <p class="title font-medium " style="font-size: 20px">計算処理</p>
+                        <p class="title  " style="font-size: 20px">Project name</p>
+                        <p class="title text-l ">user name</p>
                     </div>
-                    <div>
-                      <button class="btn button-open" data-content="1">詳細を開く</button>
+                    <div class="text-end text-sm">
+                      <button class="btn button-open " data-content="1">詳細</button>
                     </div>
                 </div>
-            </div>
+            </article>
             @php
                 $count++;
             @endphp
         @endwhile
-    </div>
+    </section>
           <!-- 詳細画面 -->
         <div class="view-detail" data-content="1" hidden>
             <div class="detail-action">
@@ -111,16 +126,14 @@
             @endif
         </div> --}}
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    {{-- 検索 --}}
-                    <input class="bg-gray-300 px-2 py-1 rounded-lg w-48 text-black" type="search" placeholder="    検索">
-                        {{-- <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" style="color: yellow">Log in</a>
-                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" style="color: yellow" >Register</a> --}}
         {{-- login 画面 --}}
-                    {{-- loginされてないとき --}}
-                    @auth
-                        <img src="{{url('/images/usericon.jpg')}}" alt="icon">
-                        <a href="">msg</a>
                     {{-- login の時 --}}
+                    @auth
+                    <a href="#"><i class="far fa-comment-dots text-yellow hover:text-blue-600" style='font-size:24px; padding:5px '></i></a>
+                    <a href="{{ route('profile') }}" >
+                        <i class="fas fa-user text-yellow hover:text-yellow-600" style="font-size: 26px;"></i>
+                    </a>
+                    {{-- loginされてないとき --}}
                     @else
                         <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
                         <div id="id01" class="modal">
@@ -167,6 +180,12 @@
 
                             </form>
                         </div>
+                    {{-- @else
+                        <a href="#"><i class="far fa-comment-dots text-yellow hover:text-blue-600" style='font-size:24px; padding:5px '></i></a>
+                        <a href="{{ route('profile') }}" >
+                            <i class="fas fa-user text-yellow hover:text-yellow-600" style="font-size: 26px;"></i>
+                        </a> --}}
+
                     @endauth
                 </div>
 </section>

@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", init);
                 document.querySelector("#view-index").hidden = true;
               document.querySelector(".location-contr").hidden = true;
               document.querySelector(".container1").hidden = true;
-
+              document.querySelector(".title").hidden = true;
               document.querySelectorAll(".view-detail").forEach((element) => {
                 element.hidden = element.dataset.content !== contentId;
               });
@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", init);
             document.querySelector("#view-index").hidden = false;
               document.querySelector(".location-contr").hidden = false;
               document.querySelector(".container1").hidden = false;
-
+              document.querySelector(".h4").hidden = false;
               document.querySelectorAll(".view-detail").forEach((element) => {
                 element.hidden = true;
               });

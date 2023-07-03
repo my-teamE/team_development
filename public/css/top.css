@@ -5,12 +5,12 @@ body {
 #location button{
     font-size:22px;
     font-weight: bold;
-    width:250px;
-    height:80px;
+    width:20%;
+    height:75px;
     border-radius: 13px ;
     margin-left: 20px;
-    background-color: rgb(221, 216, 216);
-    color: #000
+    background-color: rgb(245, 238, 238);
+    color:black
 }
 .slick-img img {
   height: auto;
@@ -45,8 +45,11 @@ body {
   opacity: 0;
 
 }
+
+
+
   .photo-list {
-    display: grid;
+    /* display: grid; */
     gap: var(--content-padding);
     grid-auto-columns: var(--item-list-auto-columns);
     grid-auto-flow: var(--item-list-auto-flow);
@@ -74,14 +77,14 @@ body {
 
   .photo-meta {
     margin: 8px 0;
-    padding: 0.4rem 1rem;
-    display: grid;
+    /* padding: 0.4rem 1rem; */
+    /* display: grid; */
     gap: 8px;
   }
 
   .photo-link {
     color: inherit;
-    display: block;
+    /* display: block; */
     box-shadow: 0 1px 2px rgb(0 0 0 / 15%);
     overflow: hidden;
     height: 100%;
@@ -132,7 +135,7 @@ body {
     transition: 0.2s;
   }
   .button-open:hover,.button-close:hover {
-    color: black;
+    color: rgb(213, 14, 14);
     background-color: var(--yellow);
   }
 
@@ -176,7 +179,7 @@ button.btn {
   line-height: 2;
   position: relative;
   display: inline-block;
-  padding: 0.5rem 3rem;
+  padding: 0.1rem 1.8rem;
   cursor: pointer;
   /* -webkit-user-select: none;
   -moz-user-select: none;
@@ -188,7 +191,7 @@ button.btn {
   vertical-align: middle;
   text-decoration: none;
   letter-spacing: 0.1em;
-  border-radius: 0.5rem;
+  border-radius: 0.6rem;
 }
 button.btn:hover{
     background:rgb(20, 138, 65);
