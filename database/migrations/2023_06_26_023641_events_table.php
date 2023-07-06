@@ -14,9 +14,17 @@ class EventsTable extends Migration
      */
     public function up()
     {
+        if (Schema::hasTable('articles')) {
+            // テーブルが存在していればリターンこのif文はautocommitがonの時は必要ない
+            return;
+        }
+
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            //外部キーのためにカラムを作成
             $table->integer('student_id');
+            //こっちは外部キー制約をくっつけるだけでカラムは作らない
+            $table->foreign('student_id')->references('student_id')->on('accounts')->onDelete('cascade');
             $table->integer('no');
             $table->string('title');
             $table->string('tag');

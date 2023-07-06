@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
     use HasFactory;
+
+    //accountsテーブルとeventsテーブルの関連付け(1:1)
+    public function event() {
+        return $this->hasOne(Event::class)->latestOfMany();
+    }
 }

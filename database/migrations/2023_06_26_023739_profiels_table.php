@@ -14,6 +14,11 @@ class ProfielsTable extends Migration
      */
     public function up()
     {
+        if (Schema::hasTable('articles')) {
+            // テーブルが存在していればリターンこのif文はautocommitがonの時は必要ない
+            return;
+        }
+
         Schema::create('profiels', function (Blueprint $table) {
             $table->id();
             $table->integer('student_id')->unique();
