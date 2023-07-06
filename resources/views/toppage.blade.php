@@ -26,6 +26,36 @@
                 </div>
             </div>
 
+            @php
+                $count = 0;
+            @endphp
+            <h4 class="title" style="font-size:30px;padding:10px  0 0 30px">Project </h4>
+    <section class="grid grid-cols-1 lg:grid-cols-4 gap-10 mb-10" id="view-index">
+         @foreach ($eventRecords as $record)
+         <!-- 一覧画面 -->
+         <article class="photo-list m-10">
+            <div class="photo-link  ">
+              <img
+                class="photo-thumb photo-1 "
+                data-content="1"
+                src="{{asset("/storage/postimages/".$record->image)}}" alt=""
+                width="640"
+                height="360"
+                alt="button-open"/>
+                <div class="photo-meta">
+                    <p class="title  " style="font-size: 20px">{{$record->title}}</p>
+                    <p class="title text-l ">{{$record->name}}</p>
+                </div>
+                <div class="text-end text-sm">
+                  <button class="btn button-open " data-content="1">詳細</button>
+                </div>
+            </div>
+        </article>
+         @endforeach
+    </section>
+          <!-- 詳細画面 -->
+
+
             <div class="container1 p-2 " style="background: rgb(38, 36, 36)">
                 <p style="font-size: 25px; padding-left:25px">過去の代表制作品</p>
                 <div class="slider flex overflow-hidden">
@@ -76,6 +106,7 @@
             @endwhile
         </section>
         <!-- 詳細画面 -->
+
         <div class="view-detail" data-content="1" hidden>
             <div class="detail-action">
                 <button class="btn button-close ">一覧へもどる</button>
