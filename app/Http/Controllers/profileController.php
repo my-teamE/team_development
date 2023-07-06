@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class profileController extends Controller
@@ -9,6 +10,7 @@ class profileController extends Controller
     //
     public function index()
     {
-        return view('profile');
+        $account = Session::get('account');
+        return view('profile', compact('account'));
     }
 }

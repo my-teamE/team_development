@@ -29,7 +29,7 @@ class postDataController extends Controller
         $event->message = "テストメッセージ";
         $event->status = mt_rand(1000, 9999);
         $event->date = mt_rand(1, 12). "月".mt_rand(1, 30)."日";
-        //imsgeのみだとnotNull制約とdefault値Nullによってエラー吐く
+        //imageのみだとnotNull制約とdefault値Nullによってエラー吐く
         $event->image = $image;
         DB::transaction(function () use($event) {
             $event->save();
