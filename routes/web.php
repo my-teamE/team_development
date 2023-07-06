@@ -21,13 +21,20 @@ Route::get('profile', [profileController::class, 'index'])->name('profile');
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::get('/, function () {
-//      return view('welcom);
-// });
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 # test
 Route::get("/postdata", [postDataController::class, "index"]);
 Route::post("/postdata", [postDataController::class, "post"]);
+
+//ログイン後の処理
+Route::post('/toppage', [TopPageController::class, "login"])->name('login');
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/toppage');
+})->name('logout');
