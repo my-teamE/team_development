@@ -11,6 +11,6 @@ class Event extends Model
 
     //Accountsテーブルに外部キーで参照できるようにする(1:1)
     public function account() {
-        return $this->belongsTo(Article::class);
+        return $this->belongsTo(Account::class);
     }
 }

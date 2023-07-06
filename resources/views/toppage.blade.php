@@ -68,7 +68,7 @@
                 alt="button-open"/>
                 <div class="photo-meta">
                     <p class="title  " style="font-size: 20px">{{$record->title}}</p>
-                    <p class="title text-l ">user name</p>
+                    <p class="title text-l ">{{$record->name}}</p>
                 </div>
                 <div class="text-end text-sm">
                   <button class="btn button-open " data-content="1">詳細</button>
