@@ -11,13 +11,15 @@ use Illuminate\Support\Facades\DB;
 class postDataController extends Controller
 {
     //TODO:適当に返す
-    public function index() {
+    public function index()
+    {
         return view("postdata");
     }
 
-    public function post(postDataRequest $request) {
+    public function post(postDataRequest $request)
+    {
         //TODO:画像保存〇
-        $image = Storage::disk('public')->put('/postimages',$request->image);
+        $image = Storage::disk('public')->put('/postimages', $request->image);
         $image = basename($image);
 
         //TODO:DB保存〇
@@ -28,10 +30,10 @@ class postDataController extends Controller
         $event->tag = "テストタグ";
         $event->message = "テストメッセージ";
         $event->status = mt_rand(1000, 9999);
-        $event->date = mt_rand(1, 12). "月".mt_rand(1, 30)."日";
+        $event->date = mt_rand(1, 12) . "月" . mt_rand(1, 30) . "日";
         //imageのみだとnotNull制約とdefault値Nullによってエラー吐く
         $event->image = $image;
-        DB::transaction(function () use($event) {
+        DB::transaction(function () use ($event) {
             $event->save();
         });
 

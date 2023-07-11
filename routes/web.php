@@ -34,7 +34,4 @@ Route::post("/postdata", [postDataController::class, "post"]);
 
 //ログイン後の処理
 Route::post('/toppage', [TopPageController::class, "login"])->name('login');
-Route::get('/logout', function () {
-    Auth::logout();
-    return redirect('/toppage');
-})->name('logout');
+Route::get('/logout', [TopPageController::class, "logout"])->name('logout');
