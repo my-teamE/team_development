@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HogeController;
 use App\Http\Controllers\postDataController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -38,3 +39,9 @@ Route::get('/logout', function () {
     Auth::logout();
     return redirect('/toppage');
 })->name('logout');
+# もらったやつ.うまくいかない
+// Route::get('/articles/create', [PostController::class, 'create'])->name('article.create');
+
+# 自分でルーティング
+Route::get('/hoge', [HogeController::class, 'index']);
+Route::post('/hoge', [HogeController::class, 'post']);

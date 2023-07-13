@@ -13,9 +13,6 @@ class TopPageController extends Controller
     //
     public function index()
     {
-
-    public function index()
-    {
    $eventRecords = Event::all();
         // $accountRecords = Account::all();
 
