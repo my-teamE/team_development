@@ -10,10 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class TopPageController extends Controller
 {
-    //
+    public $eventRecords;
+
     public function index()
     {
-   $eventRecords = Event::all();
+        $eventRecords = Event::all();
+
         // $accountRecords = Account::all();
 
         # eventテーブルで取得したstudent_idからaccountsテーブルのnameを取得する
@@ -22,8 +24,9 @@ class TopPageController extends Controller
         // dd($eventRecords[0]->account());
 
         # 代替案
-        foreach($eventRecords as $eventRecord) {
+        foreach ($eventRecords as $eventRecord) {
             $accountRecord = Account::where('student_id', '=', $eventRecord->student_id)->first();
+            // dd($accountRecord->name);
             $eventRecord->name = $accountRecord->name;
         }
 
@@ -31,7 +34,9 @@ class TopPageController extends Controller
         // dd($eventRecords, $eventRecords[0], $eventRecords[0]->image, asset('/storage/postimages/'.$eventRecords[0]->image));
         return view('toppage', compact("eventRecords"));
     }
-      //ログイン機能
+
+
+    //ログイン機能
     public function login(Request $request)
     {
         $student_id = $request->input('student_id');
@@ -44,11 +49,14 @@ class TopPageController extends Controller
 
         if ($account) {
             Auth::login($account);
-            return view('toppage', compact('account'));
+            $eventRecords = Event::all();
+            return view('toppage', compact('account', 'eventRecords'));
         }
     }
-    // 認証しているユーザーを取得する
-    // $user = Auth::user();
-    // 認証しているユーザーのIDを取得する
-    // $user_id = Auth::id();
+    //ログアウト機能
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/toppage');
+    }
 }

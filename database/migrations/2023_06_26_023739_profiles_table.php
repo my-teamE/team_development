@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class ProfielsTable extends Migration
+class ProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,12 @@ class ProfielsTable extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('articles')) {
+        if (Schema::hasTable('profiles')) {
             // テーブルが存在していればリターンこのif文はautocommitがonの時は必要ない
             return;
         }
 
-        Schema::create('profiels', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->integer('student_id')->unique();
             $table->string('class');
@@ -29,7 +29,7 @@ class ProfielsTable extends Migration
             $table->timestamps();
         });
 
-        $qb = DB::table('profiels');
+        $qb = DB::table('profiles');
         $insert = [
             [
                 'id' => null,

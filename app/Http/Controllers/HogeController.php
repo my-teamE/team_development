@@ -24,15 +24,18 @@ class HogeController extends Controller
          //TODO:DB保存〇
          $event = new Event();
          $event->student_id = Auth::user()->student_id;
-        //  dd(Auth::user()->student_id);
-         $event->no = mt_rand();
-         $event->title = "テストタイトル";
+         $userMaxNo = Event::where('student_id', Auth::user()->student_id)->max('no') + 1;
+         $event->no = $userMaxNo;
+         $event->title = $request->title;
+         # TODO:タグ機能
          $event->tag = "テストタグ";
-         $event->message = "テストメッセージ";
-         $event->status = mt_rand(1000, 9999);
+         $event->message = $request->body;
+         $event->status = 1;
+         # dateはイベントの開催日
          $event->date = mt_rand(1, 12). "月".mt_rand(1, 30)."日";
          //imageのみだとnotNull制約とdefault値Nullによってエラー吐く
          $event->image = $image;
+        //  dd($event);
          DB::transaction(function () use($event) {
              $event->save();
          });
