@@ -63,7 +63,7 @@
          @foreach ($eventRecords as $record)
          <!-- 一覧画面 -->
          <article class="photo-list row-span-2 bg-black-300 hover:bg-black-300 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <a href="{{route("apply") }}" class="photo-link ">
+            <a href="{{ asset('/apply/'. $record->id) }}" class="photo-link ">
                 <img class="photo-thumb photo-1 "
                 src="{{ asset('/storage/postimages/' . $record->image) }}" alt="" width="640"
                 height="360" alt="button-open" />

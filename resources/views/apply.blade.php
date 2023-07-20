@@ -12,29 +12,24 @@
             </div> --}}
             <div class="detail-layout flex mt-3">
                 <div>
-                <img class="photo-detail photo-1" src="{{url('/images/aa.jpg')}}" alt="" />
+                <img class="photo-detail photo-1" src="{{ asset('/storage/postimages/'). "/" . $event->image }}" alt="" />
                 <br>
-                <p class="text-lg ">開催場所：ECCコンピューター専門学校</p>
-                <p class="text-lg ">日付など：xx/xx/xx -xx/xx/xx</p>
                 </div>
                 <div class="information flex-wrap" style="padding: 10px 0 10px 20px">
                     <div class="bg-yellow" style="height:70%">
                         <!-- タイトル -->
-                        <p class="text-3xl" style="color:red" >計算処理</p>
+                        <p class="text-3xl" style="color:red" >{{ $event->title }}</p>
                         <br>
-
-                        <!-- 小見出し -->
-                        <p class="i-sub" style="font-size:large">使用言語：Java</p>
 
                         <!-- 本文 -->
                         <p class="i-desc"style="font-size:large">
-                        Java言語で、ループ処理を１００回行うプログラムをどなたか教えていただきたいです
+                            {{ $event->message }}
                         </p>
                     </div>
                     <!-- 送信ボタン -->
                     <div class="subbt text-end " style="">
                     <!-- 発注者 -->
-                        <p class="client ">大窪悠也</p>
+                        <p class="client ">{{ $account->name }}</p>
                         <a class="btn btn-custom01" href="###">
                             <span class="btn-custom01-front">応募する！！</span>
                         </a>
