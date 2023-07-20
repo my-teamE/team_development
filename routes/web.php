@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\toppageController;
 use App\Http\Controllers\profileController;
+use App\Http\Controllers\applyController;
+
 
 //toppage
 Route::get('toppage', [toppageController::class, 'index'])->name('toppage');
@@ -33,6 +35,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get("/postdata", [postDataController::class, "index"]);
 Route::post("/postdata", [postDataController::class, "post"]);
 
+Route::post('/toppage', [TopPageController::class, "index"])->name('index');
+
+
 //ログイン後の処理
 Route::post('/toppage', [TopPageController::class, "login"])->name('login');
 Route::get('/logout', function () {
@@ -46,3 +51,7 @@ Route::get('/logout', function () {
 Route::get('/hoge', [HogeController::class, 'index']);
 Route::post('/hoge', [HogeController::class, 'post']);
 Route::get('/logout', [TopPageController::class, "logout"])->name('logout');
+
+
+Route::get('/apply', [applyController::class, "index"])->name('apply');
+

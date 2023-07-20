@@ -2,130 +2,85 @@
 @section('pageTitle', 'postpage')
 {{-- @section('title', 'ECC コンミュニティ') --}}
 @section('content')
-    <main>
-        <div class="split-container">
-            {{-- 検索 --}}
-            <form action="" method="POST">
-                <div class="flex text-center pt-2" style="padding-left: 42%">
-                    <input class="bg-gray-300 px-2 py-1 rounded-l w-70 text-black" type="search" placeholder=" 検索">
-                    <button style="background: #2196F3;width:30px">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-            </form>
-            <div class="location-contr" id="" style="padding:20px 0px">
-                <div id="location" class="text-center py-3">
-                    <button>ハッカソン</button>
-                    <button>イベント</button>
-                    <button>デザイン</button>
-                </div>
-                <div id="location" class="text-center py-3">
-                    <button>メンバー募集</button>
-                    <button>アイデア募集</button>
-                    <button>過去の制作物</button>
-                </div>
-            </div>
-
-            <div class="container1 p-2 " style="background: rgb(38, 36, 36)">
-                <p style="font-size: 25px; padding-left:25px">過去の代表制作品</p>
-                <div class="slider flex overflow-hidden">
-                    <div class="slick-img">
-                        <img src="{{ url('/images/project1.png') }}" alt="Image" />
-                    </div>
-                    <div class="slick-img">
-                        <img src="{{ url('/images/project2.jpg') }}" alt="Image" />
-                    </div>
-                    <div class="slick-img">
-                        <img src="{{ url('/images/project3.jpg') }}" alt="Image" />
-                    </div>
-                    <div class="slick-img">
-                        <img src="{{ url('/images/student1.jpg') }}" alt="Image" />
-                    </div>
-                    <div class="slick-img">
-                        <img src="{{ url('/images/aaa.jpg') }}" alt="" />
-                    </div>
-                    <div class="slick-img">
-                        <img src="{{ url('/images/upload1.png') }}" alt="" />
-                    </div>
-                </div>
-            </div>
-
-            @php
-                $count = 0;
-            @endphp
-            <h4 class="title" style="font-size:30px;padding:10px  0 0 30px">Project </h4>
-            <section class="grid grid-cols-1 lg:grid-cols-4 gap-10 mb-10" id="view-index">
-                @foreach ($eventRecords as $record)
-                    <!-- 一覧画面 -->
-                    <article class="photo-list m-10">
-                        <div class="photo-link  ">
-                            <img class="photo-thumb photo-1 " data-content="1"
-                                src="{{ asset('/storage/postimages/' . $record->image) }}" alt="" width="640"
-                                height="360" alt="button-open" />
-                            <div class="photo-meta">
-                                <p class="title  " style="font-size: 20px">{{ $record->title }}</p>
-                                <p class="title text-l ">{{ $record->name }}</p>
-                            </div>
-                            <div class="text-end text-sm">
-                                <button class="btn button-open " data-content="1">詳細</button>
-                            </div>
+         <main>
+            <div class="split-container">
+                    <div class="location-contr" id="" style="padding:20px 0px">
+                        <div id="location" class="text-center py-3">
+                            <a href="" >
+                              <button class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300" style="border:solid rgb(69, 41, 134)">ハッカソン</button>
+                              </a>
+                            <a href=""><button class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200" style="border:solid rgb(155, 200, 67)">イベント</button></a>
+                            <a href=""><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300" style="border:solid rgb(183, 68, 68)">WEB</button></a>
                         </div>
-                    </article>
-                @endforeach
-            </section>
-            <!-- 詳細画面 -->
-        </div>
-        @php
-            $count = 0;
-        @endphp
-        <!-- 詳細画面 -->
+                        <div id="location" class="text-center py-3">
+                            <a href=""><button class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300"style="border:solid rgb(69, 41, 134)">メンバー募集</button></a>
+                            <a href=""><button class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200"style="border:solid rgb(155, 200, 67)">アイデア募集</button></a>
+                            <a href=""><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300"style="border:solid  rgb(183, 68, 68)">過去の制作物</button></a>
+                        </div>
+                   </div>
 
-        <div class="view-detail" data-content="1" hidden>
-            <div class="detail-action">
-                <button class="btn button-close ">一覧へもどる</button>
-            </div>
-            <div class="detail-layout flex">
-                <img class="photo-detail photo-1" src="{{ url('/images/aa.jpg') }}" width="640" height="390"
-                    alt="" />
-                <div class="information" style="padding: 10px 20px 10px">
-                    <!-- タイトル -->
-                    <p class="text-3xl" style="color:red">計算処理</p>
-
-                    <!-- 小見出し -->
-                    <p class="i-sub" style="font-size:20px">使用言語：Java</p>
-
-                    <!-- 本文 -->
-                    <p class="i-desc"style="font-size: 20px">
-                        Java言語で、ループ処理を１００回行うプログラムをどなたか教えていただきたいです
-                    </p>
-                    <!-- 送信ボタン -->
-                    <div class="subbt" style=" position:fixed; bottom: 120px; right: 20px;">
-                        <!-- 発注者 -->
-                        <p class="client ">大窪悠也</p>
-                        <a class="btn btn-custom01" href="###">
-                            <span class="btn-custom01-front">応募する！！</span>
-                        </a>
+                <div class="container1 p-2 " style="background: rgb(38, 36, 36)">
+                    <p style="font-size: 25px; padding-left:25px">過去の代表制作品</p>
+                    <div class="slider flex overflow-hidden ">
+                        <div class="slick-img">
+                            <a href=""><img src="{{url('/images/project1.png')}}" alt="Image"/></a>
+                        </div>
+                        <div class="slick-img">
+                            <a href=""><img src="{{url('/images/project2.jpg')}}" alt="Image"/></a>
+                        </div>
+                        <div class="slick-img">
+                            <a href=""><img src="{{url('/images/project3.jpg')}}" alt="Image"/></a>
+                        </div>
+                        <div class="slick-img">
+                            <a href=""><img src="{{url('/images/student1.jpg')}}" alt="Image"/></a>
+                        </div>
+                        <div class="slick-img">
+                            <a href=""><img src="{{url('/images/aaa.jpg')}}" alt=""/></a>
+                        </div>
+                        <div class="slick-img">
+                            <a href=""><img src="{{url('/images/upload1.png')}}" alt=""/></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
-    {{-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <input style="border-radius: 5px" class="bg-gray-300 justify-center" type="search" placeholder="    検索">
-                        <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" style="color: yellow">Log in</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" style="color: yellow" >Register</a>
-                        @endif
-                    @endauth
+            <div class="flex">
+                <h4 class="title" style="font-size:30px;padding:2% 0;width:30%">Project </h4>
+                 {{-- 検索 --}}
+                    <div class="relative text-end pt-7" style="width:70%;">
+                        <input class="bg-gray-300 px-3 py-1.5 focus:outline-none focus:ring-red-500 focus:border-red-500 rounded-md text-black " style="width:36%" type="search" id="search" placeholder="検索">
+                        {{-- <input class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-black" style="width:40%" type="search" placeholder=" 検索"> --}}
+                        <button id="searchbt" class="bg-blue-300 rounded-md text-white w-10 py-1.5 ">
+                        <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+            </div>
+    <section class="grid grid-cols-1 lg:grid-cols-4 gap-2 " id="view-index">
+        @php
+        $count = 0;
+        $array=["Naoo","a","b","c","d","e","f","abc"];
+        @endphp
+        <h1 class="text-xl" id="a">検索したプロジェクトはございません！！！</h1>
+         @foreach ($eventRecords as $record)
+         <!-- 一覧画面 -->
+         <article class="photo-list row-span-2 bg-black-300 hover:bg-black-300 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <a href="{{route("apply") }}" class="photo-link ">
+                <img class="photo-thumb photo-1 "
+                src="{{ asset('/storage/postimages/' . $record->image) }}" alt="" width="640"
+                height="360" alt="button-open" />
+                <div class="photo-meta ">
+                    <p class="title text-yellow-500 text-2xl ">Project : {{ $record->title }} </p>
+                    <p class="user text-lg pl-2">{{ $record->name }}</p>
                 </div>
-            @endif
-        </div> --}}
-    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <p class="text-gray-400 text-xs text-end pr-6"><time datetime="投稿記事の⽇時">2023/07/26</time></p>
+            </a>
+         </article>
+     @endforeach
+    </section>
+        <!-- 詳細画面 -->
+        </main>
+
+    <div class="hidden fixed top-0 right-0  sm:block z-10">
+
         {{-- login 画面 --}}
         {{-- login中の時 --}}
 

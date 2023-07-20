@@ -1,5 +1,5 @@
 body {
-    font-family: 'Nunito', sans-serif;
+    /* font-family: 'Nunito', sans-serif; */
     /* background-color:rgb(56, 54, 54); */
 }
 #location button{
@@ -8,8 +8,8 @@ body {
     width:20%;
     height:75px;
     border-radius: 13px ;
-    margin-left: 20px;
-    background-color: rgb(245, 238, 238);
+    margin-right    : 20px;
+    /* background-color: rgb(245, 238, 238); */
     color:black
 }
 .slick-img img {
@@ -76,7 +76,7 @@ body {
  }
 
   .photo-meta {
-    margin: 8px 0;
+    margin: 8px 10px;
     /* padding: 0.4rem 1rem; */
     /* display: grid; */
     gap: 8px;
@@ -99,7 +99,7 @@ body {
   .photo-detail {
     aspect-ratio: 16/9;
     display: block;
-    width: 60%;
+    width: 95%;
     height: 80%;
     object-fit: cover;
     object-position: center;
@@ -239,7 +239,7 @@ a.btn-custom01:after {
 .btn-custom01-front {
   position: relative;
   display: block;
-  padding: 1.5rem 5rem 1.5rem 5rem;
+  padding: 1rem 3rem 1rem 3rem;
 
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -300,6 +300,7 @@ a.btn-custom01:active:after {
 
 
 /* login page */
+
 input[type=id], input[type=password], input[type=repassword]{
   width: 100%;
   padding: 12px 20px;
@@ -307,25 +308,28 @@ input[type=id], input[type=password], input[type=repassword]{
   display: inline-block;
   box-sizing: border-box;
   color: black;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 /* Set a style for all buttons */
 .hidden button {
-  background-color: #788765;
-  color: white;
-  padding: 2px 15px;
-  margin: 10px 0;
-  border: solid 2px #fff100;
+  color:black;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
   border-radius: 5px;
   cursor: pointer;
+}
+.hidden button:hover {
+    background-color: rgb(91, 72, 72);
+    color: white;
 }
 .container2 button {
   background-color: #51407f;
   color: white;
   text-align: center;
   padding: 14px 20px;
-  margin: 8px 70px;
+  margin: 5% 10%;
   border: none;
   cursor: pointer;
   width: 80%;
