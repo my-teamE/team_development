@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="flex">
-                <h4 class="title" style="font-size:30px;padding:2% 0;width:30%">Project </h4>
+                <h4 class="title" style="font-size:30px;padding:2% 0;width:30%">By the community, for the community </h4>
                  {{-- 検索 --}}
                     <div class="relative text-end pt-7" style="width:70%;">
                         <input class="bg-gray-300 px-3 py-1.5 focus:outline-none focus:ring-red-500 focus:border-red-500 rounded-md text-black " style="width:36%" type="search" id="search" placeholder="検索">
@@ -76,37 +76,69 @@
          </article>
      @endforeach
     </section>
-        <!-- 詳細画面 -->
-        </main>
-
+</main>
+  {{-- お知らせ機能 --}}
+  <div class="notification-container hidden absolute top-1/4 left-1/3 right-1/3 px-4 bg-white rounded-lg shadow-md border border-gray-300 animate__animated" id="notification">
+    <button class="close-button absolute right-2 text-blue-700 hover:text-red-600 text-xl">&times;</button>
+    <p class="text-gray-800 text-lg py-4">ここはお知らせです</p>
+  </div>
     <div class="hidden fixed top-0 right-0  sm:block z-10">
-
         {{-- login 画面 --}}
         {{-- login中の時 --}}
 
         @auth
-            <a href="#"><i class="far fa-comment-dots text-yellow hover:text-blue-600"
-                    style='font-size:24px; padding:5px '></i></a>
-            <a href="{{ route('profile') }}">
-                <i class="fas fa-user text-yellow hover:text-yellow-600" style="font-size: 26px;"></i>
-            </a>
-            <form action="{{ route('logout') }}" method="get">
-                @csrf
-                <button type="submit">ログアウト</button>
-            </form> {{-- loginされてないとき --}}
+        <div class="text-right">
+            <button id="btm">
+                <i class='fas fa-bell text-yellow hover:text-red-300' id="showNotificationButton" style='font-size:24px; padding:5px'></i>
+            </button>{{-- <a href="#"><i class='fas fa-bell text-yellow hover:text-red-300' style='font-size:24px; padding:5px'></i></a> --}}
+            <button id="btm">
+                <i class="far fa-comment-dots hover:text-blue-300" style='font-size:24px; padding:5px'></i>
+            </button>
+            <button id="btm">
+                <i class="menu fas fa-user text-yellow hover:text-yellow-300 " style="font-size: 26px;  padding:5px"></i>
+            </button>
+        </div>
+        <div class="flex">
+            <div style="width:50%">
+
+            </div>
+            <div>
+                <ul class="overlay hidden text-gray-300 text-black" style="background:rgb(126, 108, 108)">
+                    <li class="p-1 border-l border-b transition duration-300 ease-in-out transform hover:bg-gray-600 hover:text-white focus:bg-gray-600 focus:outline-none">
+                      <form action="{{ route('profile') }}" method="get">
+                        @csrf
+                        <button class="">Profile</button>
+                      </form>
+                    </li>
+                    <li class="p-1 border-l border-b transition duration-300 ease-in-out transform hover:bg-gray-600 hover:text-white focus:bg-gray-600 focus:outline-none">
+                      <form action="{{ route('logout') }}" method="get">
+                        @csrf
+                        <button >Logout</button>
+                      </form>
+                    </li>
+                  </ul>
+
+            </div>
+        </div>
+
+
+            {{-- loginされてないとき --}}
         @else
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" id="bt">Login</button>
             <div id="id01" class="modal">
                 <form class="modal-content animate" action="{{ route('login') }}" method="post">
                     @csrf
-                    <h1 class="text-center text-3xl font-semibold pt-3 ">Login</h1>
+                    <h1 class="text-center text-4xl font-semibold pt-3" style="color: aqua">Login</h1>
                     <span onclick="document.getElementById('id01').style.display='none'" class="close"
                         title="Close Modal">&times;</span>
-                    <div class="imgcontainer">
+                    {{-- <div class="imgcontainer">
                         <img src="{{ url('/images/upload1.png') }}" alt="Avatar" class="avatar mx-auto my-auto "
                             style="border-radius:50%">
-                    </div>
+                    </div> --}}
                     <div class="container2">
+                        <hr style="border:solid 2px aqua">
+                        <br>
+                        <p class="text-center"></p>
                         <label for="uname"><b>User</b></label>
                         <input type="id" id="id" name="student_id" placeholder="Student ID"
                             class="pb-3 border-transparent outline-none bg-aliceblue" title="Student ID" required>
@@ -124,7 +156,7 @@
                 </form>
             </div>
             {{-- 新規登録 --}}
-            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
+            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"  id="bt">Register</button>
             <div id="id02" class="modal">
                 <form class="modal-content animate" action="{{ route('login') }}" method="post">
                     @csrf

@@ -10,6 +10,7 @@
 <link href="{{ mix('css/top.css') }}" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 <style>
 
 </style>
@@ -73,9 +74,36 @@
                     }
               });
             });
+
+            const userIcon = document.querySelector(".menu");
+            const overlayMenu = document.querySelector(".overlay");
+
+            userIcon.addEventListener("click", function () {
+            overlayMenu.classList.toggle("hidden");
+            });
+
+            document.addEventListener("click", function (event) {
+            if (!userIcon.contains(event.target) && !overlayMenu.contains(event.target)) {
+                overlayMenu.classList.add("hidden");
+            }
+            });
+            //知らせ
+            const showNotificationButton = document.getElementById("showNotificationButton");
+            const notificationContainer = document.getElementById("notification");
+            const closeButton = document.querySelector(".close-button");
+
+            showNotificationButton.addEventListener("click", function () {
+            notificationContainer.classList.remove("hidden", "animate__fadeOut");
+            notificationContainer.classList.add("animate__fadeIn");
+            });
+
+            closeButton.addEventListener("click", function () {
+            notificationContainer.classList.remove("animate__fadeIn");
+            notificationContainer.classList.add("animate__fadeOut");
+            setTimeout(() => {
+                notificationContainer.classList.add("hidden");
+            }, 500);
+            });
           </script>
-
-
-
     </body>
 </html>

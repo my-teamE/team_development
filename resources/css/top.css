@@ -97,10 +97,7 @@ body {
   }
 
   .photo-detail {
-    aspect-ratio: 16/9;
     display: block;
-    width: 95%;
-    height: 80%;
     object-fit: cover;
     object-position: center;
     view-transition-name: photo-example;/*詳細画面から一覧画面へ滑らかに移動するためのコード*/
@@ -312,7 +309,7 @@ input[type=id], input[type=password], input[type=repassword]{
 }
 
 /* Set a style for all buttons */
-.hidden button {
+#bt {
   color:black;
   padding: 10px;
   border-bottom: 1px solid gray;
@@ -320,8 +317,8 @@ input[type=id], input[type=password], input[type=repassword]{
   border-radius: 5px;
   cursor: pointer;
 }
-.hidden button:hover {
-    background-color: rgb(91, 72, 72);
+#bt:hover {
+    background-color: rgb(17, 13, 13);
     color: white;
 }
 .container2 button {
@@ -340,7 +337,7 @@ button:hover {
 /* Center the image and position the close button */
 
 .container2 {
-  padding: 16px;
+  padding: 20px 16px 0px 16px;
 }
 span.psw {
   float: right;
@@ -410,4 +407,11 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+}
+#btm{
+  color:black;
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-radius: 2px;
+  cursor: pointer;
 }
