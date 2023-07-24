@@ -2,111 +2,156 @@
 @section('pageTitle', 'postpage')
 {{-- @section('title', 'ECC コンミュニティ') --}}
 @section('content')
-         <main>
-            <div class="split-container">
-                    <div class="location-contr" id="" style="padding:20px 0px">
-                        <div id="location" class="text-center py-3">
-                            <a href="" >
-                              <button class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300" style="border:solid rgb(69, 41, 134)">ハッカソン</button>
-                              </a>
-                            <a href=""><button class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200" style="border:solid rgb(155, 200, 67)">イベント</button></a>
-                            <a href=""><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300" style="border:solid rgb(183, 68, 68)">WEB</button></a>
-                        </div>
-                        <div id="location" class="text-center py-3">
-                            <a href=""><button class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300"style="border:solid rgb(69, 41, 134)">メンバー募集</button></a>
-                            <a href=""><button class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200"style="border:solid rgb(155, 200, 67)">アイデア募集</button></a>
-                            <a href=""><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300"style="border:solid  rgb(183, 68, 68)">過去の制作物</button></a>
-                        </div>
-                   </div>
+    <main>
+        <div class="split-container">
+            <div class="location-contr" id="" style="padding:20px 0px">
+                <div id="location" class="text-center py-3">
+                    <a href="">
+                        <button class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300"
+                            style="border:solid rgb(69, 41, 134)">ハッカソン</button>
+                    </a>
+                    <a href="https://techplay.jp/event"><button class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200"
+                            style="border:solid rgb(155, 200, 67)">イベント</button></a>
+                    <a href=""><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300"
+                            style="border:solid rgb(183, 68, 68)">WEB</button></a>
+                </div>
+                <div id="location" class="text-center py-3">
+                    <a href=""><button
+                            class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300"style="border:solid rgb(69, 41, 134)">メンバー募集</button></a>
+                    <a href=""><button
+                            class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200"style="border:solid rgb(155, 200, 67)">アイデア募集</button></a>
+                    <a href=""><button
+                            class="bg-gray-100 hover:bg-red-200 focus:bg-red-300"style="border:solid  rgb(183, 68, 68)">過去の制作物</button></a>
+                </div>
+            </div>
 
-                <div class="container1 p-2 " style="background: rgb(38, 36, 36)">
-                    <p style="font-size: 25px; padding-left:25px">過去の代表制作品</p>
-                    <div class="slider flex overflow-hidden ">
-                        <div class="slick-img">
-                            <a href=""><img src="{{url('/images/project1.png')}}" alt="Image"/></a>
-                        </div>
-                        <div class="slick-img">
-                            <a href=""><img src="{{url('/images/project2.jpg')}}" alt="Image"/></a>
-                        </div>
-                        <div class="slick-img">
-                            <a href=""><img src="{{url('/images/project3.jpg')}}" alt="Image"/></a>
-                        </div>
-                        <div class="slick-img">
-                            <a href=""><img src="{{url('/images/student1.jpg')}}" alt="Image"/></a>
-                        </div>
-                        <div class="slick-img">
-                            <a href=""><img src="{{url('/images/aaa.jpg')}}" alt=""/></a>
-                        </div>
-                        <div class="slick-img">
-                            <a href=""><img src="{{url('/images/upload1.png')}}" alt=""/></a>
-                        </div>
+            <div class="container1 p-2 " style="background: rgb(38, 36, 36)">
+                <p style="font-size: 25px; padding-left:25px">過去の代表制作品</p>
+                <div class="slider flex overflow-hidden ">
+                    <div class="slick-img">
+                        <a href=""><img src="{{ url('/images/project1.png') }}" alt="Image" /></a>
+                    </div>
+                    <div class="slick-img">
+                        <a href=""><img src="{{ url('/images/project2.jpg') }}" alt="Image" /></a>
+                    </div>
+                    <div class="slick-img">
+                        <a href=""><img src="{{ url('/images/project3.jpg') }}" alt="Image" /></a>
+                    </div>
+                    <div class="slick-img">
+                        <a href=""><img src="{{ url('/images/student1.jpg') }}" alt="Image" /></a>
+                    </div>
+                    <div class="slick-img">
+                        <a href=""><img src="{{ url('/images/aaa.jpg') }}" alt="" /></a>
+                    </div>
+                    <div class="slick-img">
+                        <a href=""><img src="{{ url('/images/upload1.png') }}" alt="" /></a>
                     </div>
                 </div>
             </div>
-            <div class="flex">
-                <h4 class="title" style="font-size:30px;padding:2% 0;width:30%">Project </h4>
-                 {{-- 検索 --}}
-                    <div class="relative text-end pt-7" style="width:70%;">
-                        <input class="bg-gray-300 px-3 py-1.5 focus:outline-none focus:ring-red-500 focus:border-red-500 rounded-md text-black " style="width:36%" type="search" id="search" placeholder="検索">
-                        {{-- <input class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-black" style="width:40%" type="search" placeholder=" 検索"> --}}
-                        <button id="searchbt" class="bg-blue-300 rounded-md text-white w-10 py-1.5 ">
-                        <i class="fa fa-search"></i>
-                        </button>
-                    </div>
+        </div>
+        <div class="flex">
+            <h4 class="title" style="font-size:30px;padding:2% 0;width:30%">By the community, for the community </h4>
+            {{-- 検索 --}}
+            <div class="relative text-end pt-7" style="width:70%;">
+                <input
+                    class="bg-gray-300 px-3 py-1.5 focus:outline-none focus:ring-red-500 focus:border-red-500 rounded-md text-black "
+                    style="width:36%" type="search" id="search" placeholder="検索キーワード    ">
+                {{-- <input class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-black" style="width:40%" type="search" placeholder=" 検索"> --}}
+                <button id="searchbt" class="bg-blue-300 rounded-md text-white w-10 py-1.5 ">
+                    <i class="fa fa-search"></i>
+                </button>
             </div>
-    <section class="grid grid-cols-1 lg:grid-cols-4 gap-2 " id="view-index">
-        @php
-        $count = 0;
-        $array=["Naoo","a","b","c","d","e","f","abc"];
-        @endphp
-        <h1 class="text-xl" id="a">検索したプロジェクトはございません！！！</h1>
-         @foreach ($eventRecords as $record)
-         <!-- 一覧画面 -->
-         <article class="photo-list row-span-2 bg-black-300 hover:bg-black-300 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <a href="{{route("apply") }}" class="photo-link ">
-                <img class="photo-thumb photo-1 "
-                src="{{ asset('/storage/postimages/' . $record->image) }}" alt="" width="640"
-                height="360" alt="button-open" />
-                <div class="photo-meta ">
-                    <p class="title text-yellow-500 text-2xl ">Project : {{ $record->title }} </p>
-                    <p class="user text-lg pl-2">{{ $record->name }}</p>
-                </div>
-                <p class="text-gray-400 text-xs text-end pr-6"><time datetime="投稿記事の⽇時">2023/07/26</time></p>
-            </a>
-         </article>
-     @endforeach
-    </section>
-        <!-- 詳細画面 -->
-        </main>
-
+        </div>
+        <section class="grid grid-cols-1 lg:grid-cols-4 gap-2 " id="view-index">
+            @php
+                $count = 0;
+                $array = ['Naoo', 'a', 'b', 'c', 'd', 'e', 'f', 'abc'];
+            @endphp
+            <h1 class="text-lg" id="a">検索したプロジェクトはございません！！！</h1>
+            @foreach ($eventRecords as $record)
+                <!-- 一覧画面 -->
+                <article
+                    class="photo-list row-span-2 bg-black-900 hover:bg-black-300 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <a href="{{ asset('/apply/' . $record->id) }}" class="photo-link ">
+                        <img class="photo-thumb photo-1 " src="{{ asset('/storage/postimages/' . $record->image) }}"
+                            alt="" width="640" height="360" alt="button-open" />
+                        <div class="photo-meta ">
+                            <p class="title text-yellow-500 text-2xl ">Project : {{ $record->title }} </p>
+                            <p class="user text-lg pl-2">{{ $record->name }}</p>
+                        </div>
+                        <p class="text-gray-400 text-xs text-end pr-6"><time datetime="投稿記事の⽇時">2023/07/26</time></p>
+                    </a>
+                </article>
+            @endforeach
+        </section>
+    </main>
+    {{-- お知らせ機能 --}}
+    <div class="notification-container hidden absolute top-1/4 left-1/3 right-1/3 px-4 bg-black rounded-lg shadow-md border border-gray-300 animate__animated"
+        id="notification">
+        <button class="close-button absolute right-2 text-blue-700 hover:text-red-600 text-xl">&times;</button>
+        <p class="text-gray text-lg py-4">ここはお知らせです</p>
+    </div>
     <div class="hidden fixed top-0 right-0  sm:block z-10">
-
         {{-- login 画面 --}}
         {{-- login中の時 --}}
 
         @auth
-            <a href="#"><i class="far fa-comment-dots text-yellow hover:text-blue-600"
-                    style='font-size:24px; padding:5px '></i></a>
-            <a href="{{ route('profile') }}">
-                <i class="fas fa-user text-yellow hover:text-yellow-600" style="font-size: 26px;"></i>
-            </a>
-            <form action="{{ route('logout') }}" method="get">
-                @csrf
-                <button type="submit">ログアウト</button>
-            </form> {{-- loginされてないとき --}}
+            <div class="text-right">
+                <button id="btm">
+                    <i class='fas fa-bell text-yellow hover:text-red-300' id="showNotificationButton"
+                        style='font-size:24px; padding:5px'></i>
+                </button>{{-- <a href="#"><i class='fas fa-bell text-yellow hover:text-red-300' style='font-size:24px; padding:5px'></i></a> --}}
+                <button id="btm">
+                    <i class="far fa-comment-dots hover:text-blue-300" style='font-size:24px; padding:5px'></i>
+                </button>
+                <button id="btm">
+                    <i class="menu fas fa-user text-yellow hover:text-yellow-300 " style="font-size: 26px;  padding:5px"></i>
+                </button>
+            </div>
+            <div class="flex">
+                <div style="width:50%">
+
+                </div>
+                <div>
+                    <ul class="overlay hidden text-gray-300 text-black" style="background:rgb(126, 108, 108)">
+                        <li
+                            class="p-1 border-l border-b transition duration-300 ease-in-out transform hover:bg-gray-600 hover:text-white focus:bg-gray-600 focus:outline-none">
+                            <form action="{{ route('profile') }}" method="get">
+                                @csrf
+                                <button class="">Profile</button>
+                            </form>
+                        </li>
+                        <li
+                            class="p-1 border-l border-b transition duration-300 ease-in-out transform hover:bg-gray-600 hover:text-white focus:bg-gray-600 focus:outline-none">
+                            <form action="{{ route('logout') }}" method="get">
+                                @csrf
+                                <button>Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+
+            {{-- loginされてないとき --}}
         @else
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
+                id="bt">Login</button>
             <div id="id01" class="modal">
                 <form class="modal-content animate" action="{{ route('login') }}" method="post">
                     @csrf
-                    <h1 class="text-center text-3xl font-semibold pt-3 ">Login</h1>
+                    <h1 class="text-center text-4xl font-semibold pt-3" style="color: aqua">Login</h1>
                     <span onclick="document.getElementById('id01').style.display='none'" class="close"
                         title="Close Modal">&times;</span>
-                    <div class="imgcontainer">
+                    {{-- <div class="imgcontainer">
                         <img src="{{ url('/images/upload1.png') }}" alt="Avatar" class="avatar mx-auto my-auto "
                             style="border-radius:50%">
-                    </div>
+                    </div> --}}
                     <div class="container2">
+                        <hr style="border:solid 2px aqua;">
+                        <br>
+                        <p class="text-center"></p>
                         <label for="uname"><b>User</b></label>
                         <input type="id" id="id" name="student_id" placeholder="Student ID"
                             class="pb-3 border-transparent outline-none bg-aliceblue" title="Student ID" required>
@@ -124,7 +169,8 @@
                 </form>
             </div>
             {{-- 新規登録 --}}
-            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
+            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"
+                id="bt">Register</button>
             <div id="id02" class="modal">
                 <form class="modal-content animate" action="{{ route('login') }}" method="post">
                     @csrf
@@ -133,8 +179,8 @@
                             title="Close Modal">&times;</span>
                     </div>
                     <div class="container2">
-                        <h1 class="text-center text-3xl font-semibold pt-3 ">Register</h1>
-                        <hr class="bg-red-20 m-2 p-2">
+                        <h1 class="text-center text-3xl font-semibold pt-3 " style="color: aqua">Register</h1>
+                        <hr style="border:solid 2px aqua;margin-top:10px">
                         <label for="uname"><b>User ID</b></label>
                         <input type="id" id="id" placeholder="Student ID"
                             class="pb-3 border-transparent outline-none bg-aliceblue" title="Student ID" required>
