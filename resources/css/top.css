@@ -8,27 +8,16 @@ body {
     width:20%;
     height:75px;
     border-radius: 13px ;
-    margin-right    : 20px;
+    margin-right : 20px;
     /* background-color: rgb(245, 238, 238); */
     color:black
 }
 .slick-img img {
+
   height: auto;
-  opacity: .3;
-  transform: scale(.8);
-  transition: opacity .5s, transform .5s;
-  width: 80%;
-}
-.slider .slick-center img {
   opacity: 1;
-  transform: scale(1);
-}
-.slick-dots {
-    display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 20px;
-  margin: 6px 0;
+  transform: scale(.8);
+
 }
 .slick-dots li {
   margin: 0 5px;
@@ -190,9 +179,6 @@ button.btn {
   letter-spacing: 0.1em;
   border-radius: 0.6rem;
 }
-button.btn:hover{
-    background:rgb(20, 138, 65);
-}
 a.btn-custom01 {
   margin-bottom: 0.5rem;
   padding: 0;
@@ -284,6 +270,7 @@ a.btn-custom01:active:before {
 
 a.btn-custom01:active:after {
   content: "\f2b6";
+  color: blue;
 }
 /* 写真ごとにid,コンテナの割り当て */
 
@@ -410,8 +397,15 @@ span.psw {
 }
 #btm{
   color:black;
+  padding: 2px 8px;
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
-  border-radius: 2px;
+  border-right: 1px solid gray;
+  border-radius: 5px;
   cursor: pointer;
+  margin-left: 8px;
+}
+#btm:hover {
+    background-color: rgb(17, 13, 13);
+    color: white;
 }

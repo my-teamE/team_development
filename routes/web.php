@@ -48,8 +48,8 @@ Route::get('/logout', function () {
 // Route::get('/articles/create', [PostController::class, 'create'])->name('article.create');
 
 # 自分でルーティング
-Route::get('/hoge', [HogeController::class, 'index']);
-Route::post('/hoge', [HogeController::class, 'post']);
+Route::get('/hoge', [HogeController::class, 'index'])->name('hoge');
+Route::post('/hoge', [HogeController::class, 'post'])->name('hoge');
 
 Route::get('/logout', [TopPageController::class, "logout"])->name('logout');
 

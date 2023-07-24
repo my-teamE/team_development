@@ -2,7 +2,7 @@
 @section('pageTitle','apply')
 @section('title','応募')
 @section('content')
-    <main>
+    <main class="bg-black-100 hover:bg-black-800 rounded-lg shadow-md hover:shadow-lg transition-shadow px-4 pb-4">
           <!-- 詳細画面 -->
         {{-- <div class="view-detail" data-content="1" > --}}
             {{-- <div class="detail-action">
@@ -10,7 +10,7 @@
                 <button class="btn button-close ">一覧へもどる</button>
             </a>
             </div> --}}
-            <div class="detail-layout flex mt-3 ">
+            <div class="detail-layout flex mt-3">
                 <div class="image-container border border-gray-300 rounded-lg overflow-hidden" style="width:650px; height:400px">
                     <img class="w-full h-full object-cover" src="{{ asset('/storage/postimages/'). "/" . $event->image }}"alt="" />
                 <br>
@@ -32,15 +32,15 @@
                     <div class="subbt text-end">
                       <!-- 発注者 -->
                       <a class="btn btn-custom01" href="###">
-                          <button class="btn-custom01-front" id="applyButton">応募する！！</button>
+                          <button class="btn-custom01-front" id="applyButton">応募</button>
                       </a>
                     </div>
                   </div>
 
         </div>
         <br>
-                <p class="text-lg ">開催場所：ECCコンピューター専門学校</p>
-                <p class="text-lg ">日付など：xx/xx/xx -xx/xx/xx</p>
+        <p class="text-lg">開催場所：ECCコンピューター専門学校</p>
+        <p class="text-lg">日付など：xx/xx/xx -xx/xx/xx</p>
         </main>
 </section>
 

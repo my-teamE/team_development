@@ -9,13 +9,13 @@
                             <a href="" >
                               <button class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300" style="border:solid rgb(69, 41, 134)">ハッカソン</button>
                               </a>
-                            <a href="https://techplay.jp/event"><button class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200" style="border:solid rgb(155, 200, 67)">イベント</button></a>
+                            <a href=""><button class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200" style="border:solid rgb(155, 200, 67)">イベント</button></a>
                             <a href=""><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300" style="border:solid rgb(183, 68, 68)">WEB</button></a>
                         </div>
                         <div id="location" class="text-center py-3">
                             <a href=""><button class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300"style="border:solid rgb(69, 41, 134)">メンバー募集</button></a>
                             <a href=""><button class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200"style="border:solid rgb(155, 200, 67)">アイデア募集</button></a>
-                            <a href=""><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300"style="border:solid  rgb(183, 68, 68)">過去の制作物</button></a>
+                            <a href="{{ route('hoge') }}"><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300"style="border:solid  rgb(183, 68, 68)">過去の制作物</button></a>
                         </div>
                    </div>
 
@@ -38,7 +38,7 @@
                             <a href=""><img src="{{url('/images/aaa.jpg')}}" alt=""/></a>
                         </div>
                         <div class="slick-img">
-                            <a href=""><img src="{{url('/images/upload1.png')}}" alt=""/></a>
+                            <a href=""><img src="{{url('/images/20210311134726.jpg')}}" alt=""/></a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="relative text-end pt-7" style="width:70%;">
                         <input class="bg-gray-300 px-3 py-1.5 focus:outline-none focus:ring-red-500 focus:border-red-500 rounded-md text-black " style="width:36%" type="search" id="search" placeholder="検索キーワード    ">
                         {{-- <input class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-black" style="width:40%" type="search" placeholder=" 検索"> --}}
-                        <button id="searchbt" class="bg-blue-300 rounded-md text-white w-10 py-1.5 ">
+                        <button id="searchbt" class="bg-blue-400 hover:bg-blue-600 rounded-md text-white w-10 py-1.5 ">
                         <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -62,7 +62,7 @@
         <h1 class="text-lg" id="a">検索したプロジェクトはございません！！！</h1>
          @foreach ($eventRecords as $record)
          <!-- 一覧画面 -->
-         <article class="photo-list row-span-2 bg-black-900 hover:bg-black-300 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+         <article class="photo-list row-span-2 bg-black-100 hover:bg-black-300 rounded-lg shadow-md hover:shadow-lg transition-shadow">
             <a href="{{ asset('/apply/'. $record->id) }}" class="photo-link ">
                 <img class="photo-thumb photo-1 "
                 src="{{ asset('/storage/postimages/' . $record->image) }}" alt="" width="640"
@@ -80,29 +80,49 @@
   {{-- お知らせ機能 --}}
   <div class="notification-container hidden absolute top-1/4 left-1/3 right-1/3 px-4 bg-black rounded-lg shadow-md border border-gray-300 animate__animated" id="notification">
     <button class="close-button absolute right-2 text-blue-700 hover:text-red-600 text-xl">&times;</button>
-    <p class="text-gray text-lg py-4">ここはお知らせです</p>
+    <div class="py-3 flex">
+        <div style="width: 90%">
+            <p class="text-gray text-lg">ここはお知らせです</p>
+        </div>
+         {{-- <div class="text-end">
+            <button class="mail text-xl"><i class="fa fa-envelope"></i></button>
+            <button class="mail-open text-xl"><i class="fa fa-envelope-open-o"></i></button>
+         </div> --}}
+
+    </div>
+
   </div>
     <div class="hidden fixed top-0 right-0  sm:block z-10">
         {{-- login 画面 --}}
         {{-- login中の時 --}}
 
         @auth
-        <div class="text-right">
-            <button id="btm">
-                <i class='fas fa-bell text-yellow hover:text-red-300' id="showNotificationButton" style='font-size:24px; padding:5px'></i>
-            </button>{{-- <a href="#"><i class='fas fa-bell text-yellow hover:text-red-300' style='font-size:24px; padding:5px'></i></a> --}}
-            <button id="btm">
-                <i class="far fa-comment-dots hover:text-blue-300" style='font-size:24px; padding:5px'></i>
+        <div class=" text-right flex">
+            <form action="{{ route('profile') }}" method="get">
+                @csrf
+                <button id="btm" class="text-xl" title='Profile'>
+                    <i class="menu fas fa-user text-yellow hover:text-gray-100 " style="padding:5px"></i>
+                </button>
+              </form>
+            {{-- <button id="btm" class="group-hover:opacity-1">
+                <i class='fas fa-bell text-yellow hover:text-gray-100' id="showNotificationButton" style='padding:5px'></i>
+            </button> --}}
+                 <button id="btm" title="通知">
+                <i class='fas fa-bell text-yellow hover:text-gray-100' id="showNotificationButton"style='padding:5px'></i>
+                 </button>
+            <button id="btm" title="Message">
+                <i class="far fa-comment-dots hover:text-gray-100" id="showNotificationButton" style='padding:5px'></i>
             </button>
-            <button id="btm">
-                <i class="menu fas fa-user text-yellow hover:text-yellow-300 " style="font-size: 26px;  padding:5px"></i>
-            </button>
+            <form action="{{ route('logout') }}" method="get" id="btm" >
+                @csrf
+                <button class="text-lg" style="padding-top: 1px" title="Logout">Logout </button>
+              </form>
         </div>
-        <div class="flex">
+        {{-- <div class="flex">
             <div style="width:50%">
 
-            </div>
-            <div>
+            </div> --}}
+            {{-- <div>
                 <ul class="overlay hidden text-gray-300 text-black" style="background:rgb(126, 108, 108)">
                     <li class="p-1 border-l border-b transition duration-300 ease-in-out transform hover:bg-gray-600 hover:text-white focus:bg-gray-600 focus:outline-none">
                       <form action="{{ route('profile') }}" method="get">
@@ -119,8 +139,7 @@
                   </ul>
 
             </div>
-        </div>
-
+        </div>--}}
 
             {{-- loginされてないとき --}}
         @else

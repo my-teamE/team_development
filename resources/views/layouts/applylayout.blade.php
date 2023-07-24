@@ -14,6 +14,7 @@
 <style>
 /* css */
 
+
 </style>
  <title>@yield('pageTitle') - チーム制作２</title>
 </head>
