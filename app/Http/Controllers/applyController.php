@@ -8,6 +8,7 @@ use App\Models\Event;
 use App\Models\Account;
 use App\Models\Applydata;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class applyController extends Controller
 {
@@ -35,7 +36,13 @@ class applyController extends Controller
         $applydata->student_id = $apply_user_code;
         $applydata->no = $maxNo + 1;
         $applydata->apply_user_code = $student_id = Auth::user()->student_id;
-        $applydata->status = "未確認";
+        $applydata->status = 0;
+
+
+        DB::transaction(function () use ($applydata) {
+            $applydata->save();
+        });
+
         return redirect("/");
     }
 }

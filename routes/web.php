@@ -50,6 +50,7 @@ Route::get('/logout', function () {
 # 自分でルーティング
 Route::get('/hoge', [HogeController::class, 'index']);
 Route::post('/hoge', [HogeController::class, 'post']);
+
 Route::get('/logout', [TopPageController::class, "logout"])->name('logout');
 
 # apply雛形

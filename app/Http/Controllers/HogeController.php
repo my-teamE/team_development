@@ -28,7 +28,7 @@ class HogeController extends Controller
          $event->no = $userMaxNo;
          $event->title = $request->title;
          # TODO:タグ機能
-         $event->tag = "テストタグ";
+         $event->tag = implode("", $request->checkboxes);
          $event->message = $request->body;
          $event->status = 1;
          # dateはイベントの開催日
