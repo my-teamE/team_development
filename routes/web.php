@@ -52,6 +52,8 @@ Route::get('/hoge', [HogeController::class, 'index']);
 Route::post('/hoge', [HogeController::class, 'post']);
 Route::get('/logout', [TopPageController::class, "logout"])->name('logout');
 
-
+# apply雛形
 Route::get('/apply', [applyController::class, "index"])->name('apply');
-
+# applyルーティング
+Route::get('/apply/{id}', [applyController::class, 'apply']);
+Route::post('/apply/{id}', [applyController::class, 'applied']);

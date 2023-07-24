@@ -61,6 +61,7 @@
                     <i class="fa fa-search"></i>
                 </button>
             </div>
+<<<<<<< HEAD
         </div>
         <section class="grid grid-cols-1 lg:grid-cols-4 gap-2 " id="view-index">
             @php
@@ -91,6 +92,33 @@
         <button class="close-button absolute right-2 text-blue-700 hover:text-red-600 text-xl">&times;</button>
         <p class="text-gray text-lg py-4">ここはお知らせです</p>
     </div>
+=======
+    <section class="grid grid-cols-1 lg:grid-cols-4 gap-2 " id="view-index">
+        @php
+        $count = 0;
+        $array=["Naoo","a","b","c","d","e","f","abc"];
+        @endphp
+        <h1 class="text-xl" id="a">検索したプロジェクトはございません！！！</h1>
+         @foreach ($eventRecords as $record)
+         <!-- 一覧画面 -->
+         <article class="photo-list row-span-2 bg-black-300 hover:bg-black-300 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <a href="{{ asset('/apply/'. $record->id) }}" class="photo-link ">
+                <img class="photo-thumb photo-1 "
+                src="{{ asset('/storage/postimages/' . $record->image) }}" alt="" width="640"
+                height="360" alt="button-open" />
+                <div class="photo-meta ">
+                    <p class="title text-yellow-500 text-2xl ">Project : {{ $record->title }} </p>
+                    <p class="user text-lg pl-2">{{ $record->name }}</p>
+                </div>
+                <p class="text-gray-400 text-xs text-end pr-6"><time datetime="投稿記事の⽇時">2023/07/26</time></p>
+            </a>
+         </article>
+     @endforeach
+    </section>
+        <!-- 詳細画面 -->
+        </main>
+
+>>>>>>> 86ea7962b0ced20af61cd3667cd460cdbafb7f5d
     <div class="hidden fixed top-0 right-0  sm:block z-10">
         {{-- login 画面 --}}
         {{-- login中の時 --}}
