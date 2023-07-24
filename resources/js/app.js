@@ -11,5 +11,4 @@ $(function() {
       centerPadding: '0px',
     });
   });
-
 require('./top');

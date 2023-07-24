@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Event;
 use App\Models\Account;
+use App\Models\Applydata;
+use Illuminate\Support\Facades\Auth;
 
 class applyController extends Controller
 {
@@ -19,6 +21,21 @@ class applyController extends Controller
         $event = Event::where('id', $id)->first();
         $account = Account::where('student_id', $event->student_id)->first();
         // dd($account->name);
-        return view('apply', compact("event", "account"));
+        return view('apply', compact("event", "account", "id"));
+    }
+
+    // 応募ボタンクリック時のエンドポイント
+    public function applied($id) {
+        $maxNo = ApplyData::where('student_id', Auth::user()->student_id)->max('no');
+        dd($maxNo);
+
+        $applydata = new Applydata();
+        $apply_user_code = Event::where('id', $id)->first();
+
+        $applydata->student_id = $apply_user_code;
+        $applydata->no = $maxNo + 1;
+        $applydata->apply_user_code = $student_id = Auth::user()->student_id;
+        $applydata->status = "未確認";
+        return redirect("/");
     }
 }

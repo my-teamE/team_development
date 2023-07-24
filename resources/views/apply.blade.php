@@ -30,8 +30,8 @@
                     <div class="subbt text-end " style="">
                     <!-- 発注者 -->
                         <p class="client ">{{ $account->name }}</p>
-                        <a class="btn btn-custom01" href="###">
-                            <span class="btn-custom01-front">応募する！！</span>
+                        <a class="btn btn-custom01" href="/toppage">
+                            <span class="btn-custom01-front" id="applyButton">応募する！！</span>
                         </a>
                     </div>
                 </div>

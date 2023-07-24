@@ -73,8 +73,19 @@
                     }
               });
             });
-          </script>
 
+            // 応募ボタンのクリック動作です
+            const applyButton = document.querySelector("#applyButton");
+            const currentUrl = window.location.href;
+            const parts = currentUrl.split('/');
+
+            // URLの最後の値を抜き出す
+            const extractedValue = parts[parts.length - 1];
+
+            applyButton.addEventListener("click" () => {
+                axios.post(`http://localhost:8000/${extractedValue}`, { });
+            })
+          </script>
 
 
     </body>
