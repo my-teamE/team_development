@@ -1,6 +1,6 @@
-@extends('layouts.layout')
+@extends('layouts.applylayout')
 @section('pageTitle','apply')
-{{-- @section('title','ECC コンミュニティ') --}}
+@section('title','応募')
 @section('content')
     <main>
           <!-- 詳細画面 -->
@@ -32,7 +32,7 @@
                     <div class="subbt text-end">
                       <!-- 発注者 -->
                       <a class="btn btn-custom01" href="###">
-                          <span class="btn-custom01-front">応募する！！</span>
+                          <button class="btn-custom01-front" id="applyButton">応募する！！</button>
                       </a>
                     </div>
                   </div>
