@@ -1,4 +1,4 @@
-@extends("layouts.app")
+@extends("layouts.profilelayout")
 @section("pageTitle","投稿画面")
 @section("title","投稿画面")
 @section("content")

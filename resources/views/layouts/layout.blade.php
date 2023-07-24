@@ -16,6 +16,7 @@
 </style>
  <title>@yield('pageTitle') - チーム制作２</title>
  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+
 </head>
     <body>
         <div class="wrapper h-screen "  style="background-color:rgb(109, 106, 106);">
