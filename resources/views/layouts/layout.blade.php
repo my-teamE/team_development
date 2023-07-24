@@ -80,26 +80,10 @@
                     // a.hidden=false;
                 }
             });
-<<<<<<< HEAD
         });
 
         const userIcon = document.querySelector(".menu");
         const overlayMenu = document.querySelector(".overlay");
-=======
-
-            // 応募ボタンのクリック動作です
-            const applyButton = document.querySelector("#applyButton");
-            const currentUrl = window.location.href;
-            const parts = currentUrl.split('/');
-
-            // URLの最後の値を抜き出す
-            const extractedValue = parts[parts.length - 1];
-
-            applyButton.addEventListener("click" () => {
-                axios.post(`http://localhost:8000/${extractedValue}`, { });
-            })
-          </script>
->>>>>>> 86ea7962b0ced20af61cd3667cd460cdbafb7f5d
 
         userIcon.addEventListener("click", function() {
             overlayMenu.classList.toggle("hidden");
