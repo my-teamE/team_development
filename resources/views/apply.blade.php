@@ -31,9 +31,14 @@
                     <!-- 送信ボタン -->
                     <div class="subbt text-end">
                       <!-- 発注者 -->
-                      <a class="btn btn-custom01" id="applyAnker" href="">
+                      <a class="btn btn-custom01" id="applyAnker" href="/applied/{{ $id }}">
                           <button class="btn-custom01-front" id="applyButton">応募する！！</button>
                       </a>
+                      <!--formだとどうやっても崩れる-->
+                      {{-- <form class="btn btn-custom01" action="/apply/{{ $id }}" method="POST">
+                        @csrf
+                        <input class="btn-custom01-front" type="submit" value="応募する！！">
+                    </form> --}}
                     </div>
                   </div>
 

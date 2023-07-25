@@ -36,25 +36,25 @@
 </main>
 <script >
     // 応募ボタンのクリック動作です
-    const applyButton = document.getElementById("applyButton");
-    const currentUrl = window.location.href;
-    const parts = currentUrl.split('/');
-    // URLの最後の値を抜き出す
-    const extractedValue = parts[parts.length - 1];
-    console.log(extractedValue);
+    // const applyButton = document.getElementById("applyButton");
+    // const currentUrl = window.location.href;
+    // const parts = currentUrl.split('/');
+    // // URLの最後の値を抜き出す
+    // const extractedValue = parts[parts.length - 1];
+    // console.log(extractedValue);
 
-    const applyAnker = document.querySelector("#applyAnker");
-    applyAnker.addEventListener("click", (event) => {
-        event.preventDefault();
-    });
-    applyButton.addEventListener("click", async () => {
-      console.log("aaa");
-      try {
-        await axios.post(`http://localhost:8000/apply/${extractedValue}`, { });
-      } catch (err) {
-        console.log(err.response.data.message);
-      }
-})
+    // // const applyAnker = document.querySelector("#applyAnker");
+    // // applyAnker.addEventListener("click", (event) => {
+    // //     event.preventDefault();
+    // // });
+    // applyButton.addEventListener("click", async () => {
+    //   console.log("aaa");
+    //   try {
+    //     await axios.post(`http://localhost:8000/apply/${extractedValue}`, { });
+    //   } catch (err) {
+    //     console.log(err.response.data.message);
+    //   }
+// })
 </script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 

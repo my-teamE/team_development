@@ -14,7 +14,7 @@ class applyController extends Controller
 {
     // 雛形
     public function index(){
-        return view('apply');
+        return view ('apply');
     }
 
     // クエリ文字列によるルーティング
@@ -27,22 +27,20 @@ class applyController extends Controller
 
     // 応募ボタンクリック時のエンドポイント
     public function applied($id) {
-        $maxNo = ApplyData::where('student_id', Auth::user()->student_id)->max('no');
-        dd($maxNo);
-
         $applydata = new Applydata();
-        $apply_user_code = Event::where('id', $id)->first();
+        $eventStundent = Event::where('id', $id)->first();
 
-        $applydata->student_id = $apply_user_code;
+        $maxNo = Applydata::where('student_id', $eventStundent->student_id)->max('no');
+
+        $applydata->student_id = $eventStundent->student_id;
         $applydata->no = $maxNo + 1;
-        $applydata->apply_user_code = $student_id = Auth::user()->student_id;
+        $applydata->apply_user_code = Auth::user()->student_id;
         $applydata->status = 0;
-
 
         DB::transaction(function () use ($applydata) {
             $applydata->save();
         });
 
-        return ;
+        return redirect("/toppage");
     }
 }
