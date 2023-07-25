@@ -14,6 +14,7 @@ Route::get('toppage', [toppageController::class, 'index'])->name('toppage');
 
 //post
 Route::get('profile', [profileController::class, 'index'])->name('profile');
+Route::post('profile', [profileController::class, 'edit'])->name('edit');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
