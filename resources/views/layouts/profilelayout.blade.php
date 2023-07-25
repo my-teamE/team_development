@@ -45,8 +45,8 @@ img{
 <body>
     <div class="wrapper w-screen h-screen bg-gray-50">
                 <header style="background-color:rgb(126, 108, 108)">
-                    <div class="container mx-auto py-4 ml-30px">
-                        <div  style="padding-left:50px">
+                    <div class="container mx-auto py-3 ml-30px">
+                        <div  style="padding-left:10px">
                             <a href="{{route("toppage")}}"><h2 class=" text-white text-3xl" style="font-family: 'Aclonica', sans-serif;"><b style="color: aqua">ECC </b>Community</h2></a>
                             <h2 class="text-3xl text-white pl-50">@yield('title')</h2>
                         </div>

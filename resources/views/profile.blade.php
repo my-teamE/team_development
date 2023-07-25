@@ -12,7 +12,11 @@
             <div class="avatar-con">
                 <div class="avatar">
                 <img src="{{ url('/images/user.png') }}" alt="">
-                 <p >  {{ $account->name }}</p>
+                 <div class="text-end text-black flex">
+                    <p style="width:30%"></p>
+                    <p>  {{ $account->name }}</p>
+                    <button class='text-lg text-end pl-6' id="editbt" title="編集"><i class='far'>&#xf044; </i></button>
+               </div>
                 </div>
             </div>
             <h1 style="font-size: 30px;color:rgbs146, 15, 15);padding:0 0 10px 110px">紹介</h1>
@@ -33,41 +37,27 @@
 
             </div>
             <div class="hidden fixed top-0 right-0 sm:block z-10" class="padding-right:3px">
-                <div class="text-right">
-                    <button id="btm">
-                        <i class='fas fa-bell text-yellow hover:text-red-300' id="showNotificationButton" style='font-size:24px; padding:5px'></i>
-                    </button>{{-- <a href="#"><i class='fas fa-bell text-yellow hover:text-red-300' style='font-size:24px; padding:5px'></i></a> --}}
-                    <button id="btm">
-                        <i class="far fa-comment-dots hover:text-blue-300" style='font-size:24px; padding:5px'></i>
+                <div class=" text-right flex">
+                    <form action="{{ route('profile') }}" method="get">
+                        @csrf
+                        <button id="btm" class="text-xl" title='Profile'>
+                            <i class="menu fas fa-user text-yellow hover:text-gray-100 " style="padding:5px"></i>
+                        </button>
+                      </form>
+                    {{-- <button id="btm" class="group-hover:opacity-1">
+                        <i class='fas fa-bell text-yellow hover:text-gray-100' id="showNotificationButton" style='padding:5px'></i>
+                    </button> --}}
+                         <button id="btm" title="通知">
+                        <i class='fas fa-bell text-yellow hover:text-gray-100' id="showNotificationButton"style='padding:5px'></i>
+                         </button>
+                    <button id="btm" title="Message">
+                        <i class="far fa-comment-dots hover:text-gray-100" id="showNotificationButton" style='padding:5px'></i>
                     </button>
-                    <button id="btm">
-                        <i class="menu fas fa-user text-yellow hover:text-yellow-300 " style="font-size: 26px;  padding:5px"></i>
-                    </button>
+                    <form action="{{ route('logout') }}" method="get" id="btm" >
+                        @csrf
+                        <button class="text-lg" style="padding-top: 1px" title="Logout">Logout </button>
+                      </form>
                 </div>
-                <div class="flex">
-                    <div style="width:50%">
-                    </div>
-                    <div>
-                        <ul class="overlay hidden text-gray-300 text-black" style="background:rgb(126, 108, 108)">
-                            <li class="p-1 border-l border-b transition duration-300 ease-in-out transform hover:bg-gray-600 hover:text-white focus:bg-gray-600 focus:outline-none">
-                              <form action="{{ route('profile') }}" method="get">
-                                @csrf
-                                <button class="">Profile</button>
-                              </form>
-                            </li>
-                            <li class="p-1 border-l border-b transition duration-300 ease-in-out transform hover:bg-gray-600 hover:text-white focus:bg-gray-600 focus:outline-none">
-                              <form action="{{ route('logout') }}" method="get">
-                                @csrf
-                                <button >Logout</button>
-                              </form>
-                            </li>
-                          </ul>
-                    </div>
-                </div>
-                <div class="text-end text-black">
-                     <button  class='text-lg' id="editbt">編集 <i class='far'>&#xf044; </i></button>
-                </div>
-
            </div>
         </div>
         {{-- 編集ボタン押したら --}}
