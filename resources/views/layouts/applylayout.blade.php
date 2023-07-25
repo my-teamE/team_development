@@ -34,27 +34,25 @@
     </div><!--/.container-->
 </main>
 <script >
-    // import axios from 'axios';
     // 応募ボタンのクリック動作です
     const applyButton = document.getElementById("applyButton");
-      console.log(applyButton);
-      console.log("applyButton");
+    const currentUrl = window.location.href;
+    const parts = currentUrl.split('/');
+    // URLの最後の値を抜き出す
+    const extractedValue = parts[parts.length - 1];
+    console.log(extractedValue);
 
-  const currentUrl = window.location.href;
-
-  const parts = currentUrl.split('/');
-
-  // URLの最後の値を抜き出す
-
-  const extractedValue = parts[parts.length - 1];
-
-
-  applyButton.addEventListener("click", () => {
-      console.log("aaa")
-console.log(axios.post(`http://localhost:8000/${extractedValue}`, { }))
-    //   axios.post(`http://localhost:8000/${extractedValue}`, { });
-
-
+    const applyAnker = document.querySelector("#applyAnker");
+    applyAnker.addEventListener("click", (event) => {
+        event.preventDefault();
+    });
+    applyButton.addEventListener("click", async () => {
+      console.log("aaa");
+      try {
+        await axios.post(`http://localhost:8000/apply/${extractedValue}`, { });
+      } catch (err) {
+        console.log(err.response.data.message);
+      }
 })
 </script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

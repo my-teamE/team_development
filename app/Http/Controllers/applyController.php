@@ -43,6 +43,6 @@ class applyController extends Controller
             $applydata->save();
         });
 
-        return redirect("/");
+        return ;
     }
 }
