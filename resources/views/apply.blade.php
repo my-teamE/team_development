@@ -23,6 +23,7 @@
                     <h1 class="text-3xl text-center" style="color:white">{{ $event->title }}</h1>
                     <br>
 
+
                     <!-- 本文 -->
                     <p class="i-desc ml-2"style="font-size:large">
                         {{ $event->message }}
@@ -37,6 +38,27 @@
                     </a>
                 </div>
             </div>
+
+                      <!-- 本文 -->
+                      <p class="i-desc ml-2"style="font-size:large">
+                          {{ $event->message }}
+                      </p>
+                      <p class="mt-auto italic text-l text-end">by {{ $account->name }}</p>
+                    </div>
+                    <!-- 送信ボタン -->
+                    <div class="subbt text-end">
+                      <!-- 発注者 -->
+                      <a class="btn btn-custom01" id="applyAnker" href="/applied/{{ $id }}">
+                          <button class="btn-custom01-front" id="applyButton">応募する！！</button>
+                      </a>
+                      <!--formだとどうやっても崩れる-->
+                      {{-- <form class="btn btn-custom01" action="/apply/{{ $id }}" method="POST">
+                        @csrf
+                        <input class="btn-custom01-front" type="submit" value="応募する！！">
+                    </form> --}}
+                    </div>
+                  </div>
+
 
         </div>
         <br>

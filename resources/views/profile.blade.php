@@ -86,20 +86,17 @@
                 <div class="introduction">
                     <div class="private text-lg p-4 " style="background-color:#c8bec6;width:35%">
                         <p>Full name:
-                            <input type="text" class="text-lg focus:outline-none border-b border-black"
-                                style="background-color:#c8bec6;" name="name" value="{{ $account->name }}">
+                            <b name="student_id">{{ $account->name }}</b>
                         </p>
                         <p>Gender:
-                            <input type="text" class="text-lg focus:outline-none border-b border-black"
-                                style="background-color:#c8bec6;" name="gender" value="{{ $account->gender }}">
+                            <b name="student_id">{{ $account->gender }}</b>
                         </p>
                         <p>Class:
                             <input type="text" class="text-lg focus:outline-none border-b border-black"
                                 style="background-color:#c8bec6;" name="class" value="{{ $profile->class }}">
                         </p>
                         <p>Student ID:
-                            <input type="text" class="text-lg focus:outline-none border-b border-black"
-                                style="background-color:#c8bec6;" name="student_id" value="{{ $profile->syudent_id }}">
+                            <b name="student_id">{{ $profile->student_id }}</b>
                         </p>
                     </div>
                     <div style="width:10%"></div>

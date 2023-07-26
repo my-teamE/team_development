@@ -60,4 +60,4 @@ Route::get('/logout', [TopPageController::class, "logout"])->name('logout');
 Route::get('/apply', [applyController::class, "index"])->name('apply');
 # applyルーティング
 Route::get('/apply/{id}', [applyController::class, 'apply']);
-Route::post('/apply/{id}', [applyController::class, 'applied']);
+Route::get('/applied/{id}', [applyController::class, 'applied']);
