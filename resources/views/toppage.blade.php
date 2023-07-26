@@ -6,6 +6,24 @@
         <div class="split-container">
             <div class="location-contr" id="" style="padding:20px 0px">
                 <div id="location" class="text-center py-3">
+
+                    <a href="{{ route('search') }}">
+                        <button class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300"
+                            style="border:solid rgb(69, 41, 134)">ハッカソン</button>
+                    </a>
+                    <a href="https://techplay.jp/event"><button class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200"
+                            style="border:solid rgb(155, 200, 67)">イベント</button></a>
+                    <a href=""><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300"
+                            style="border:solid rgb(183, 68, 68)">WEB</button></a>
+                </div>
+                <div id="location" class="text-center py-3">
+                    <a href=""><button
+                            class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300"style="border:solid rgb(69, 41, 134)">メンバー募集</button></a>
+                    <a href=""><button
+                            class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200"style="border:solid rgb(155, 200, 67)">アイデア募集</button></a>
+                    <a href="{{ route('hoge') }}"><button
+                            class="bg-gray-100 hover:bg-red-200 focus:bg-red-300"style="border:solid  rgb(183, 68, 68)">発注者はこちら</button></a>
+
                     <button class="btsearh bg-gray-100 hover:bg-blue-200 focus:bg-blue-300" data-target="view-index" style="border:solid rgb(69, 41, 134)">ハッカソン</button>
                     <button class="btsearh bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200" data-target="view-index" style="border:solid rgb(155, 200, 67)">イベント</button>
                     <button class="btsearh bg-gray-100 hover:bg-red-200 focus:bg-red-300" data-target="view-index" style="border:solid rgb(183, 68, 68)">WEB</button>
@@ -14,6 +32,7 @@
                     <button class="btsearh bg-gray-100 hover:bg-blue-200 focus:bg-blue-300" data-target="view-index" style="border:solid rgb(69, 41, 134)">メンバー募集</button>
                     <button class="btsearh bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200" data-target="view-index" style="border:solid rgb(155, 200, 67)">アイデア募集</button>
                     <a href="{{ route('hoge') }}"><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300" style="border:solid  rgb(183, 68, 68)">過去の制作物</button></a>
+
                 </div>
            </div>
 

@@ -36,8 +36,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get("/postdata", [postDataController::class, "index"]);
 Route::post("/postdata", [postDataController::class, "post"]);
 
+//toppage関連
 Route::post('/toppage', [TopPageController::class, "index"])->name('index');
-
+//タグ検索
+Route::get('/routesearch', [TopPageController::class, "search"])->name('search');
 
 //ログイン後の処理
 Route::post('/toppage', [TopPageController::class, "login"])->name('login');
