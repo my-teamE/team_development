@@ -59,4 +59,16 @@ class TopPageController extends Controller
         Auth::logout();
         return redirect('/toppage');
     }
+
+    //タグ検索
+    public function search(Request $request)
+    {
+        //ハッカソンの場合しかタグ検索を実装していない
+        $event = new Event();
+        $eventRecords = Event::all();
+        // dd($eventRecords);
+        $eventRecords = Event::where('tag', 'like', '%1%')->get();
+        // dd($eventRecords);
+        return view('toppage', compact("eventRecords"));
+    }
 }
