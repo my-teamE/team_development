@@ -26,6 +26,7 @@ class ProfilesTable extends Migration
             $table->string('github_url')->unique();
             $table->string('skill');
             $table->string('comment');
+            $table->string('message');
             $table->timestamps();
         });
 
@@ -37,7 +38,9 @@ class ProfilesTable extends Migration
                 'class' => 'IE2A',
                 'github_url' => '2220399.github.url',
                 'skill' => 'laravel',
-                'comment' => '頑張ります'
+                'comment' => '頑張ります',
+                'message' => 'ここはお知らせです'
+
             ],
             [
                 'id' => null,
@@ -45,7 +48,9 @@ class ProfilesTable extends Migration
                 'class' => 'IE2A',
                 'github_url' => '2220415.github.url',
                 'skill' => 'java',
-                'comment' => 'よろしく'
+                'comment' => 'よろしく',
+                'message' => 'ここはお知らせです'
+
             ]
         ];
         $qb->insert($insert);

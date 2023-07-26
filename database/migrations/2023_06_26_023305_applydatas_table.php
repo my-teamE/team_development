@@ -35,21 +35,21 @@ class ApplydatasTable extends Migration
                 'student_id' => 2220399,
                 'no' => 1,
                 'apply_user_code' => 2220415,
-                'status' => '許可'
+                'status' => '0'
             ],
             [
                 'id' => null,
                 'student_id' => 2220399,
                 'no' => 2,
                 'apply_user_code' => 2220415,
-                'status' => '拒否'
+                'status' => '0'
             ],
             [
                 'id' => null,
                 'student_id' => 2220415,
                 'no' => 1,
                 'apply_user_code' => 2220399,
-                'status' => '未確認'
+                'status' => '0'
             ]
 
         ];
