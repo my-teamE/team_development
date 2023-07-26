@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class ApplydataTable extends Migration
+class ApplydatasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,7 @@ class ApplydataTable extends Migration
             return;
         }
 
-        Schema::create('applydata', function (Blueprint $table) {
+        Schema::create('applydatas', function (Blueprint $table) {
             $table->id();
             $table->integer('student_id');
             $table->integer('no');
@@ -28,7 +28,7 @@ class ApplydataTable extends Migration
             $table->timestamps();
         });
 
-        $qb = DB::table('applydata');
+        $qb = DB::table('applydatas');
         $insert = [
             [
                 'id' => null,

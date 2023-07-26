@@ -14,6 +14,7 @@ Route::get('toppage', [toppageController::class, 'index'])->name('toppage');
 
 //post
 Route::get('profile', [profileController::class, 'index'])->name('profile');
+Route::post('profile', [profileController::class, 'edit'])->name('edit');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,4 +58,4 @@ Route::get('/logout', [TopPageController::class, "logout"])->name('logout');
 Route::get('/apply', [applyController::class, "index"])->name('apply');
 # applyルーティング
 Route::get('/apply/{id}', [applyController::class, 'apply']);
-Route::post('/apply/{id}', [applyController::class, 'applied']);
+Route::get('/applied/{id}', [applyController::class, 'applied']);
