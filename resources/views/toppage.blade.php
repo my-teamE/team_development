@@ -6,16 +6,14 @@
             <div class="split-container">
                     <div class="location-contr" id="" style="padding:20px 0px">
                         <div id="location" class="text-center py-3">
-                            <a href="" >
-                              <button class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300" style="border:solid rgb(69, 41, 134)">ハッカソン</button>
-                              </a>
-                            <a href=""><button class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200" style="border:solid rgb(155, 200, 67)">イベント</button></a>
-                            <a href=""><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300" style="border:solid rgb(183, 68, 68)">WEB</button></a>
+                            <button class="btsearh bg-gray-100 hover:bg-blue-200 focus:bg-blue-300" data-target="view-index" style="border:solid rgb(69, 41, 134)">ハッカソン</button>
+                            <button class="btsearh bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200" data-target="view-index" style="border:solid rgb(155, 200, 67)">イベント</button>
+                            <button class="btsearh bg-gray-100 hover:bg-red-200 focus:bg-red-300" data-target="view-index" style="border:solid rgb(183, 68, 68)">WEB</button>
                         </div>
                         <div id="location" class="text-center py-3">
-                            <a href=""><button class="bg-gray-100 hover:bg-blue-200 focus:bg-blue-300"style="border:solid rgb(69, 41, 134)">メンバー募集</button></a>
-                            <a href=""><button class="bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200"style="border:solid rgb(155, 200, 67)">アイデア募集</button></a>
-                            <a href="{{ route('hoge') }}"><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300"style="border:solid  rgb(183, 68, 68)">過去の制作物</button></a>
+                            <button class="btsearh bg-gray-100 hover:bg-blue-200 focus:bg-blue-300" data-target="view-index" style="border:solid rgb(69, 41, 134)">メンバー募集</button>
+                            <button class="btsearh bg-gray-100 hover:bg-yellow-100 focus:bg-yellow-200" data-target="view-index" style="border:solid rgb(155, 200, 67)">アイデア募集</button>
+                            <a href="{{ route('hoge') }}"><button class="bg-gray-100 hover:bg-red-200 focus:bg-red-300" style="border:solid  rgb(183, 68, 68)">過去の制作物</button></a>
                         </div>
                    </div>
 
@@ -23,22 +21,22 @@
                     <p style="font-size: 25px; padding-left:25px">過去の代表制作品</p>
                     <div class="slider flex overflow-hidden ">
                         <div class="slick-img">
-                            <a href=""><img src="{{url('/images/project1.png')}}" alt="Image"/></a>
+                            <a href=""><img src="{{ asset('/storage/images/project1.png')}}" alt="Image"/></a>
                         </div>
                         <div class="slick-img">
-                            <a href=""><img src="{{url('/images/project2.jpg')}}" alt="Image"/></a>
+                            <a href=""><img src="{{ asset('/storage/images/project2.jpg')}}" alt="Image"/></a>
                         </div>
                         <div class="slick-img">
-                            <a href=""><img src="{{url('/images/project3.jpg')}}" alt="Image"/></a>
+                            <a href=""><img src="{{ asset('/storage/images/project3.jpg')}}" alt="Image"/></a>
                         </div>
                         <div class="slick-img">
-                            <a href=""><img src="{{url('/images/student1.jpg')}}" alt="Image"/></a>
+                            <a href=""><img src="{{ asset('/storage/images/student1.jpg')}}" alt="Image"/></a>
                         </div>
                         <div class="slick-img">
-                            <a href=""><img src="{{url('/images/aaa.jpg')}}" alt=""/></a>
+                            <a href=""><img src="{{ asset('/storage/images/aaa.jpg')}}" alt=""/></a>
                         </div>
                         <div class="slick-img">
-                            <a href=""><img src="{{url('/images/20210311134726.jpg')}}" alt=""/></a>
+                            <a href=""><img src="{{ asset('/storage/images/20210311134726.jpg')}}" alt=""/></a>
                         </div>
                     </div>
                 </div>
@@ -55,10 +53,6 @@
                     </div>
             </div>
     <section class="grid grid-cols-1 lg:grid-cols-4 gap-2 " id="view-index">
-        @php
-        $count = 0;
-        $array=["Naoo","a","b","c","d","e","f","abc"];
-        @endphp
         <h1 class="text-lg" id="a">検索したプロジェクトはございません！！！</h1>
          @foreach ($eventRecords as $record)
          <!-- 一覧画面 -->
@@ -67,12 +61,17 @@
                 <img class="photo-thumb photo-1 "
                 src="{{ asset('/storage/postimages/' . $record->image) }}" alt="" width="640"
                 height="360" alt="button-open" />
-                <div class="photo-meta ">
-                    <p class="title text-yellow-500 text-2xl ">Project : {{ $record->title }} </p>
-                    <p class="user text-lg pl-2">{{ $record->name }}</p>
-                </div>
-                <p class="text-gray-400 text-xs text-end pr-6"><time datetime="投稿記事の⽇時">2023/07/26</time></p>
             </a>
+                <div class="photo-meta ">
+                    <p class="title text-yellow-500 text-2xl ">{{ $record->title }} </p>
+                    <div class="flex">
+                        <div class="user font-bold mb-2" style="width:90%"><a href="">{{ $record->name }}</a></div>
+                        <div>
+                            <i id="heartIcon" class="fas fa-heart text-end cursor-pointer" style="width: 20px;color:white"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-xs text-end pr-4 pb-2"><time datetime="投稿記事の⽇時">2023/07/26</time></p>
          </article>
      @endforeach
     </section>
