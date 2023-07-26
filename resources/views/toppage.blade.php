@@ -86,9 +86,7 @@
         <p class="text-gray text-lg py-4">ここはお知らせです</p>
     </div>
     <div class="hidden fixed top-0 right-0  sm:block z-10">
-        {{-- login 画面 --}}
-        {{-- login中の時 --}}
-
+        {{-- login 画面 --}} {{-- login中の時 --}}
         @auth
         <div class=" text-right flex">
             <form action="{{ route('profile') }}" method="get">
