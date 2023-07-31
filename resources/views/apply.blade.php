@@ -59,12 +59,9 @@
             </div>
 
         </div>
-
-
-        </div>
         <br>
         <p class="text-lg">開催場所：ECCコンピューター専門学校</p>
-        <p class="text-lg">日付など：xx/xx/xx -xx/xx/xx</p>
+        <p class="text-lg">日付など：{{ $event->date }} -未定</p>
     </main>
     </section>
 

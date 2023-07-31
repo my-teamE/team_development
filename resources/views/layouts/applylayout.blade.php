@@ -29,11 +29,40 @@
                 </div>
         </header>
     <main style="padding-top:100px ">
-    <div class="container text-white w-full h-full mx-auto" style="background-color:rgb(56, 54, 54);">
-        @yield('content')
+        <div class="container text-white w-full h-full mx-auto" style="background-color:rgb(56, 54, 54);">
+            @yield('content')
 
-    </div><!--/.container-->
-</main>
+        </div><!--/.container-->
+        <div class="notification-container hidden absolute top-1/4 left-1/3 right-1/3 px-4 bg-black rounded-lg shadow-md border border-gray-300 animate__animated"
+        id="notification">
+        <button class="close-button absolute right-2 text-blue-700 hover:text-red-600 text-xl">&times;</button>
+        <p class="text-gray text-lg py-4">ここはお知らせです</p>
+        </div>
+        <div class="hidden fixed top-0 right-0  sm:block z-10">
+            <div class=" text-right flex">
+                <form action="{{ route('profile') }}" method="get">
+                    @csrf
+                    <button id="btm" class="text-xl" title='Profile'>
+                        <i class="menu fas fa-user text-yellow hover:text-gray-100 " style="padding:5px"></i>
+                    </button>
+                </form>
+                {{-- <button id="btm" class="group-hover:opacity-1">
+                    <i class='fas fa-bell text-yellow hover:text-gray-100' id="showNotificationButton" style='padding:5px'></i>
+                </button> --}}
+                    <button id="btm" title="通知">
+                    <i class='fas fa-bell text-yellow hover:text-gray-100' id="showNotificationButton"style='padding:5px'></i>
+                    </button>
+                <button id="btm" title="Message">
+                    <i class="far fa-comment-dots hover:text-gray-100" id="showNotificationButton" style='padding:5px'></i>
+                </button>
+                <form action="{{ route('logout') }}" method="get" id="btm" >
+                    @csrf
+                    <button class="text-lg" style="padding-top: 1px" title="Logout">Logout </button>
+                </form>
+            </div>
+        </div>
+    </main>
+    </div>
 <script >
     // 応募ボタンのクリック動作です
     // const applyButton = document.getElementById("applyButton");
@@ -55,8 +84,24 @@
     //     console.log(err.response.data.message);
     //   }
 // })
+            //知らせ
+            const showNotificationButton = document.getElementById("showNotificationButton");
+            const notificationContainer = document.getElementById("notification");
+            const closeButton = document.querySelector(".close-button");
+
+            showNotificationButton.addEventListener("click", function () {
+            notificationContainer.classList.remove("hidden", "animate__fadeOut");
+            notificationContainer.classList.add("animate__fadeIn");
+            });
+
+            closeButton.addEventListener("click", function () {
+            notificationContainer.classList.remove("animate__fadeIn");
+            notificationContainer.classList.add("animate__fadeOut");
+            setTimeout(() => {
+                notificationContainer.classList.add("hidden");
+            }, 500);
+            });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
     {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 </body>

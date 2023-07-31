@@ -77,7 +77,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="text-gray-400 text-xs text-end pr-4 pb-2"><time datetime="投稿記事の⽇時">2023/07/26</time></p>
+                        <p class="text-gray-400 text-xs text-end pr-4 pb-2"><time datetime="投稿記事の⽇時">{{ $record->date }}</time></p>
                  </article>
             @endforeach
         </section>
