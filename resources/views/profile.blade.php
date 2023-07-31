@@ -9,6 +9,7 @@
                 id="notification">
                 <button class="close-button absolute right-2 text-blue-700 hover:text-red-600 text-xl">&times;</button>
                 <p class="text-gray-300 text-lg py-4">ここはお知らせです</p>
+
             </div>
             <div class="avatar-con">
                 <div class="avatar">
