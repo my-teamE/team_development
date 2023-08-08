@@ -1,0 +1,70 @@
+
+.date{
+    text-align: end;
+    margin-right: 10px;
+}
+ul{
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 3%;
+  margin-left: 1%;
+  width: auto;
+  text-align: center;
+}
+
+li {
+  width:23%;
+  display: inline-block; /*liを１つごとに改行しない*/
+  vertical-align: top; /*liを上揃えにする*/
+  list-style: none;
+  padding: 5px;
+  margin: 5px;
+  border: solid 1px;
+  border-color: yellow;
+  position: relative;
+}
+
+.first,.second,.third{
+    position: absolute;
+    top: -15%;
+    left: -15%;
+    z-index: 1;
+    width: 30%;
+    transform: rotate(-30deg);
+}
+
+a,a:visited{
+    color:white;
+    text-decoration:none;
+}
+
+a:hover{
+    color:rgba(0, 255, 255);
+}
+
+p {
+  margin: 0;
+  width: auto;
+}
+
+img{
+    width: 100%;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 100%;
+    max-width: 1080px;
+}
+
+.good{
+    text-align: right;
+}
+
+.pgnt{
+    text-align: center;
+}
+
+
+/* 123画像　　回転 */
+

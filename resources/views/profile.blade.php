@@ -4,13 +4,6 @@
 @section('content')
     <section>
         <div class="profile">
-            {{-- お知らせ機能 --}}
-            <div class="notification-container hidden absolute top-1/4 left-1/3 right-1/3 px-4 bg-black rounded-lg shadow-md border border-gray-300 animate__animated"
-                id="notification">
-                <button class="close-button absolute right-2 text-blue-700 hover:text-red-600 text-xl">&times;</button>
-                <p class="text-gray-300 text-lg py-4">ここはお知らせです</p>
-
-            </div>
             <div class="avatar-con">
                 <div class="avatar">
                     <img src="{{ url('/images/user.png') }}" alt="">
@@ -23,7 +16,7 @@
                 </div>
             </div>
             <h1 style="font-size: 30px;color:rgbs146, 15, 15);padding:0 0 10px 110px">紹介</h1>
-            <div class="introduction">
+            <div class="introduction pb-5">
                 <div class="private text-lg p-4 " style="background-color:#c8bec6;width:35%">
                     <p>Full name: {{ $account->name }}</p>
                     <p>Gender: {{ $account->gender }} </p>
@@ -37,33 +30,16 @@
                     <p>Comment: {{ $profile->comment }}</p>
                     <p> </p>
                 </div>
+            </div>
+            <div class="private text-lg p-3 mb-4 " style="background-color:#c8bec6;margin:0 10%">
+                <a href="{{route("adminpage")}}">Created community:</a> <p></p>
+            </div>
 
+            <div class="private text-lg p-3 mb-4  " style="background-color:#c8bec6;margin:0 10%">
+                <p>Joined community:</p>
             </div>
-            <div class="hidden fixed top-0 right-0 sm:block z-10" class="padding-right:3px">
-                <div class=" text-right flex">
-                    <form action="{{ route('profile') }}" method="get">
-                        @csrf
-                        <button id="btm" class="text-xl" title='Profile'>
-                            <i class="menu fas fa-user text-yellow hover:text-gray-100 " style="padding:5px"></i>
-                        </button>
-                    </form>
-                    {{-- <button id="btm" class="group-hover:opacity-1">
-                        <i class='fas fa-bell text-yellow hover:text-gray-100' id="showNotificationButton" style='padding:5px'></i>
-                    </button> --}}
-                    <button id="btm" title="通知">
-                        <i class='fas fa-bell text-yellow hover:text-gray-100'
-                            id="showNotificationButton"style='padding:5px'></i>
-                    </button>
-                    <button id="btm" title="Message">
-                        <i class="far fa-comment-dots hover:text-gray-100" id="showNotificationButton"
-                            style='padding:5px'></i>
-                    </button>
-                    <form action="{{ route('logout') }}" method="get" id="btm">
-                        @csrf
-                        <button class="text-lg" style="padding-top: 1px" title="Logout">Logout </button>
-                    </form>
-                </div>
-            </div>
+
+
         </div>
         {{-- 編集ボタン押したら --}}
         <form action="{{ route('edit') }}" method="POST">

@@ -7,11 +7,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\toppageController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\applyController;
+use App\Http\Controllers\detailController;
+use App\Http\Controllers\rankingController;
+use App\Http\Controllers\adminpageController;
 
 
 //toppage
 Route::get('toppage', [toppageController::class, 'index'])->name('toppage');
-
 //post
 Route::get('profile', [profileController::class, 'index'])->name('profile');
 Route::post('profile', [profileController::class, 'edit'])->name('edit');
@@ -61,3 +63,12 @@ Route::get('/apply', [applyController::class, "index"])->name('apply');
 # applyルーティング
 Route::get('/apply/{id}', [applyController::class, 'apply']);
 Route::get('/applied/{id}', [applyController::class, 'applied']);
+
+//admin page
+Route::get('/adminpage', [adminpageController::class, 'index'])->name('adminpage');
+
+//detail page
+Route::get('/ranking', [rankingController::class, 'index'])->name('ranking');
+
+//ranking page
+Route::get('/detail', [detailController::class, 'index'])->name('detail');
