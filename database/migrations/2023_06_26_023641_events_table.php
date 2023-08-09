@@ -32,6 +32,7 @@ class EventsTable extends Migration
             $table->string('image');
             $table->integer('status');
             $table->string('date');
+            $table->integer('heart');
             $table->timestamps();
         });
 
@@ -46,7 +47,8 @@ class EventsTable extends Migration
                 'message' => '注意事項1',
                 'image' => 'image1.png',
                 'status' => 1,
-                'date' => '7月7日'
+                'date' => '7月7日',
+                'heart' => 0
             ],
             [
                 'id' => null,
@@ -57,7 +59,8 @@ class EventsTable extends Migration
                 'message' => '注意事項2',
                 'image' => 'image2.png',
                 'status' => 1,
-                'date' => '7月8日'
+                'date' => '7月8日',
+                'heart' => 0
             ],
             [
                 'id' => null,
@@ -68,7 +71,8 @@ class EventsTable extends Migration
                 'message' => '注意事項3',
                 'image' => 'image3.png',
                 'status' => 1,
-                'date' => '8月23日'
+                'date' => '8月23日',
+                'heart' => 0
             ]
         ];
         $qb->insert($insert);
