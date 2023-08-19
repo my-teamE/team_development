@@ -72,7 +72,6 @@
         </div>
         {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
         <script src="{{ asset('js/apply.js') }}"></script>
-        <script src="{{ asset('js/ranking.js') }}"></script>
 
     </body>
 </html>

@@ -2,8 +2,47 @@
 @section('pageTitle', '管理者用画面')
 @section('title', 'Created Community')
 @section('content')
-    <h1 class="pb-4 px-2 text-2xl">投稿したコミュニティ</h1>
-<section class="grid grid-cols-1 lg:grid-cols-4 gap-2 p-2" id="view-index">
+    <div class="flex pt-2 ">
+        <div class=" text-center w-full">
+            <button id="bt_admin1" class="px-20 py-3 mx-2 bg-blue-500 text-2xl text-white rounded-lg transition-transform transform scale-110 hover:scale-100 hover:bg-blue-600" onclick="toggleButtonSize('large')">投稿したコミュニティ</button>
+            <button id="bt_admin2" class="px-20 py-3 mx-2 bg-green-500 text-2xl text-white rounded-lg transition-transform transform scale-50 hover:scale-100 hover:bg-green-600" onclick="toggleButtonSize('small')">参加したコミュニティ</button>
+        </div>
+    </div>
+    <div class="post">
+    <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <a id="posting" class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-black" onclick="change('posting')">投稿中</a>
+        </li>
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <a id="posted" class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-black bg-white" onclick="change('posted')">投稿済み</a>
+        </li>
+    </ul>
+    </div>
+    <div class="join hidden">
+    <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row ">
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <a id="joining" class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-black" onclick="change('joining')">参加中</a>
+        </li>
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <a id="joined" class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-black bg-white" onclick="change('joined')">参加済み</a>
+        </li>
+    </ul>
+    </div>
+    {{-- Phần còn lại của mã HTML --}}
+     {{-- <div class="flex py-2">
+        <div class=" text-center w-full">
+        <button class="px-40 py-3 mx-2 bg-gray-100 text-black rounded-lg transition-transform transform hover:scale-110">投稿中</button>
+        <button class="px-40 py-3 mx-2 bg-gray-100 text-black rounded-lg transition-transform transform hover:scale-110">投稿済み</button>
+        </div>
+    </div> --}}
+    {{-- <div class="flex py-2">
+        <div class=" text-center w-full">
+        <button class="px-40 py-3 mx-2 bg-gray-100 text-black rounded-lg transition-transform transform hover:scale-110">参加中</button>
+        <button class="px-40 py-3 mx-2 bg-gray-100 text-black rounded-lg transition-transform transform hover:scale-110">参加済み</button>
+        </div>
+    </div> --}}
+    <section class="grid grid-cols-1 lg:grid-cols-4 gap-2 p-2 py-3" id="view-index">
+        {{-- ここ画像を表示する --}}
         @php
             $a=5;
         @endphp
@@ -31,6 +70,56 @@
                 </div>
             </article>
         @endfor
-</section>
-@endsection
+    </section>
 
+    <script>
+        function toggleButtonSize(size) {
+            const buttonContainer1 = document.querySelector('#bt_admin1');
+            const buttonContainer2 = document.querySelector('#bt_admin2');
+            if (size === 'large') {
+                document.querySelector(".post").classList.remove("hidden");
+                document.querySelector(".join").classList.add("hidden");
+                buttonContainer1.classList.remove('scale-50');
+                buttonContainer1.classList.add('scale-110');
+                buttonContainer2.classList.remove('scale-110');
+                buttonContainer2.classList.add('scale-50');
+            } else if (size === 'small') {
+                document.querySelector(".join").classList.remove("hidden");
+                document.querySelector(".post").classList.add("hidden");
+                buttonContainer1.classList.remove('scale-110');
+                buttonContainer1.classList.add('scale-50');
+                buttonContainer2.classList.remove('scale-50');
+                buttonContainer2.classList.add('scale-110');
+            }
+        }
+
+        function change(post) {
+            const posting = document.querySelector('#posting');
+            const posted = document.querySelector('#posted');
+            const joining = document.querySelector('#joining');
+            const joined = document.querySelector('#joined');
+
+            if (post === 'posted') {
+                posting.classList.remove("text-white", "bg-black");
+                posting.classList.add("text-black", "bg-white");
+                posted.classList.remove("text-black", "bg-white");
+                posted.classList.add("text-white", "bg-black");
+            } else if (post === 'posting') {
+                posting.classList.remove("text-black", "bg-white");
+                posting.classList.add("text-white", "bg-black");
+                posted.classList.remove("text-white", "bg-black");
+                posted.classList.add("text-black", "bg-white");
+            } else if (post === 'joined') {
+                joining.classList.remove("text-white", "bg-black");
+                joining.classList.add("text-black", "bg-white");
+                joined.classList.remove("text-black", "bg-white");
+                joined.classList.add("text-white", "bg-black");
+            } else if (post === 'joining') {
+                joining.classList.remove("text-black", "bg-white");
+                joining.classList.add("text-white", "bg-black");
+                joined.classList.remove("text-white", "bg-black");
+                joined.classList.add("text-black", "bg-white");
+            }
+        }
+    </script>
+@endsection

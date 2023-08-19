@@ -3,6 +3,7 @@
 @section('title', 'Rank')
 @section('content')
 <link href="{{ asset('css/ranking.css') }}" rel="stylesheet">
+<script src="{{ asset('js/ranking.js') }}"></script>
     <h1 class="text-center text-3xl text-">現在ランキング</h1>
     <p class="date"></p>
 

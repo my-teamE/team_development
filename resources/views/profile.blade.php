@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <h1 style="font-size: 30px;color:rgbs146, 15, 15);padding:0 0 10px 110px">紹介</h1>
+            <h1 style="font-size: 30px;color:rgbs146, 15, 15;padding:0 0 10px 110px">紹介</h1>
             <div class="introduction pb-5">
                 <div class="private text-lg p-4 " style="background-color:#c8bec6;width:35%">
                     <p>Full name: {{ $account->name }}</p>
