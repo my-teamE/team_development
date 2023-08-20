@@ -46,9 +46,9 @@
                        参加人数：
                     </p>
                     <p class="i-desc ml-2"style="font-size:large">
-                        いいね！：
-                     </p>
-
+                        {{-- 自分がlikeしてる時、click()に変数入れます --}}
+                        <button class="like fa fa-thumbs-up" onclick="clicks('click')"> :</button>
+                    </p>
                 </div>
 
 
@@ -60,5 +60,14 @@
         <p class="text-lg">日付など：今日 -未定</p>
 
     </main>
+    <script>
+        function clicks(aru){
+            const changecolor = document.querySelector('.like');
+            console.log(changecolor)
+                if(aru ==='click'){
+                    changecolor.style.color="aqua";
+                }
+        }
+    </script>
 @endsection
 
