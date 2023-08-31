@@ -10,7 +10,8 @@
             </div>
             <div>
                 {{-- <div class="title text-yellow-500 text-2xl ">{{ $record->title }} </div> --}}
-                <div class="title text-yellow-500 text-2xl ">{{ $clickedEvent->title }}</div>
+                <div class="title text-yellow-400 text-2xl pl-1">{{ $clickedEvent->title }}</div>
+                {{-- <div class="user font-bold ml-1 "><a href="/confirmation/{{ $id }}">{{ $account->name }}</a></div> --}}
                 <div class="user font-bold ml-1 "><a href="">user</a></div>
                 {{-- <div class="user font-bold mb-2" style="width:90%"><a href="">{{ $record->name }}</a></div> --}}
             </div>
@@ -28,23 +29,31 @@
                     <!-- タイトル -->
                     {{-- <h1 class="text-3xl text-center" style="color:white">{{ $event->title }}</h1> --}}
 
-                    <h1 class="text-3xl text-center" style="color:white">{{ $clickedEvent->title }}</h1>
+                    <h1 class="text-yellow-400 text-center" style="font-size:2vw;">{{ $clickedEvent->title }}</h1>
                     <br>
                     <!-- 本文 -->
-                    <p class="i-desc ml-2"style="font-size:large">
+                    <p class="i-desc ml-2"style=" font-size:1.5vw; ">
                         {{-- {{ $event->message }} --}}
                         {{ $clickedEvent->message }}
                     </p>
                 </div>
                 <hr>
                 <div class="bg-yellow ml-5 mb-2">
-                    <p class="i-desc ml-2"style="font-size:large">
+                    {{-- <p class="i-desc ml-2"style="font-size:large">
                         いいね
                         {{-- 自分がlikeしてる時、click()に変数入れます --}}
-                        <button class="like fa fa-thumbs-up" onclick="clicks('click')"> :</button>
-                    </p>
+                        {{-- <button class="like fa fa-thumbs-up" onclick="clicks('click')"> :</button>
+                    </p> --}}
+                   <b class="text-lg"> 応募メンバー：</b>
                     @foreach ($applydatas as $applydata)
-                        {{ $applydata->apply_user_code }}
+                    <div class="flex">
+                        <div class="w-2/3 text-xl">{{ $applydata->apply_user_code }}</div>
+                        <div class="w-1/3 text-end">
+                            <button class="bg-blue-600 px-2 py-1 rounded-1">許可</button>
+                            <button class="bg-red-600 px-2 py-1 rounded-1">拒否</button>
+                        </div>
+                    </div>
+
                     @endforeach
                 </div>
 
