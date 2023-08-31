@@ -32,11 +32,11 @@ class TopPageController extends Controller
         // dd($eventRecords[0]->account());
 
         // # 代替案
-        // foreach ($eventRecords as $eventRecord) {
-        //     $accountRecord = Account::where('student_id', '=', $eventRecord->student_id)->first();
-        //     // dd($accountRecord->name);
-        //     $eventRecord->name = $accountRecord->name;
-        // }
+        foreach ($eventRecords as $eventRecord) {
+            $accountRecord = Account::where('student_id', '=', $eventRecord->student_id)->first();
+            // dd($accountRecord->name);
+            $eventRecord->name = $accountRecord->name;
+        }
 
 
 

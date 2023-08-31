@@ -13,7 +13,6 @@
             @endif
             {{-- フラッシュメッセージ終わり --}}
 
-
             <div id="location" class="text-center py-3">
                 <button class="btsearh bg-gray-100 hover:bg-blue-200 focus:bg-blue-300" data-target="view-index"
                     data-category="1" style="border:solid rgb(69, 41, 134)">イベント</button>
@@ -32,35 +31,25 @@
             </div>
         </div>
 
-        <div class="container1 p-2 " style="background: rgb(38, 36, 36); border-radius: 30px;">
-            <p style="font-size: 25px; padding-left:25px">過去の代表制作品</p>
-            <div class="slider flex">
-                <div class="slick-img">
-                    <img src="{{ url('images/project1.png') }}" alt="Image" />
+        <div class="container1 p-2 " style="background: rgb(38, 36, 36); border-radius: 10px;">
+                <a href="{{ route('ranking') }}">
+                <p style="font-size: 25px; padding-left:25px">過去の代表制作品</p>
+                </a>
+                <div class="slider flex">
+                        @foreach ($eventRecords as $record)
+                        <div class="slick-img  relative w-full h-0 aspect-16/8">
+                            <img class="" src="{{ asset('/storage/postimages/' . $record->image) }}">
+                        </div>
+                        @endforeach
+                        <div class="slick-img pt-2">
+                            <a href=""><img src="{{ url('/images/student1.jpg') }}" alt="Image" /></a>
+                        </div>
+                        <div class="slick-img pt-2">
+                            <a href=""><img src="{{ url('/images/aaa.jpg') }}" alt="" /></a>
+                        </div>
                 </div>
-                <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/project2.jpg') }}" alt="Image" /></a>
-                </div>
-                <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/project3.jpg') }}" alt="Image" /></a>
-                </div>
-                <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/student1.jpg') }}" alt="Image" /></a>
-                </div>
-                <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/aaa.jpg') }}" alt="" /></a>
-                </div>
-                <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/20210311134726.jpg') }}" alt="" /></a>
-                </div>
-                <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/student1.jpg') }}" alt="" /></a>
-                </div>
-
-            </div>
 
         </div>
-        </a>
         <div class="flex">
             <h4 class="title" style="font-size:30px;padding:2% 0;width:30%">イベント一覧</h4>
             {{-- 検索 --}}
@@ -95,8 +84,9 @@
 
                         <div class="flex" style="width:75%">
                             <div class="user mb-2">
-                                <p class="title text-yellow-500 font-bold text-xl ">{{ $record->title }} </p>
-                                <a href="">{{ $record->name }}</a>
+                                <p class="title text-yellow-500 font-bold text-lg ">{{ $record->title }} </p>
+
+                                <a class="pl-1"  href="">{{ $record->name }}</a>
                             </div>
                         </div>
                         {{-- 今のところ使わないのでハートアイコンは表示しない --}}

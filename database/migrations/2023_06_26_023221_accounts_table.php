@@ -26,6 +26,7 @@ class AccountsTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('gender');
+            $table->string('image');
             $table->timestamps();
         });
 
@@ -38,7 +39,8 @@ class AccountsTable extends Migration
                 'name' => '道上康介',
                 'email' => '2220399@ecc.ac.jp',
                 'password' => '12345678',
-                'gender' => 'man'
+                'gender' => 'man',
+                'image' => 'megane.jpg'
 
             ],
             [
@@ -47,7 +49,8 @@ class AccountsTable extends Migration
                 'name' => '市島功大',
                 'email' => '2220415@ecc.ac.jp',
                 'password' => 'password',
-                'gender' => 'man'
+                'gender' => 'man',
+                'image' => 'megane.jpg'
 
             ],
             [
@@ -56,7 +59,8 @@ class AccountsTable extends Migration
                 'name' => 'VUONG THE SON',
                 'email' => '2220061@ecc.ac.jp',
                 'password' => 'son',
-                'gender' => 'man'
+                'gender' => 'man',
+                'image' => 'megane.jpg'
 
             ]
         ];
