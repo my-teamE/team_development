@@ -65,6 +65,18 @@
             if (aru === 'click') {
                 changecolor.style.color = "blue";
             }
+            // 更新処理をフックしている
+            const currentUrl = location.pathname;
+            const id = currentUrl.split('/')[2];
+            console.log(id);
+            fetch(`http://localhost:8000/api/heartclick/${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("フック出来ている", data);
+                })
+                .catch(error => {
+                    console.error("エラー発生", error);
+                })
         }
     </script>
 @endsection

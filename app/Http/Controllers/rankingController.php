@@ -10,18 +10,14 @@ class rankingController extends Controller
     // レンダリング時に必要なデータと使い方を表しています
     public function index()
     {
-        $eventRecords = Event::orderBy('heart', 'DESC')->get();
-
+        $eventRecords = Event::where('status', 0)->orderBy('heart', 'desc')->limit(8)->get();
+        // 制作物１の部分(title)
+        // dd($ddTest[0]->title);
+        // ○○件グッド(heart)
+        // dd($ddTest[0]->heart);
+        // ここには作品の説明文が入ります(message)
         // dd($eventRecords);
-
-        // // これはeventの名前を表しています(制作物1.制作物2...に当たる部分に挿入されると思います)
-        // dd($eventRecords->title);
-
-        // // これはeventのハートの個数を表しています(○○件グッドに当たる部分に挿入されると思います)
-        // dd($eventRecords->heart);
-
-        // // これはeventの本文を表しています(ここは作品の説明文が入ります ～～～～～～～～～に当たる部分に挿入されると思います)
-        // dd($eventRecords->message);
+        // dd($eventRecords);
         return view('ranking', compact('eventRecords'));
     }
 }
