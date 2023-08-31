@@ -14,10 +14,10 @@
                 <a href="{{ asset('detail') }}"><img class="first" src={{ asset('images/crown-10275-gold.png') }}
                         alt=""><img src="images/aa.jpg" alt="" />
                     <div>
-                        <p>制作物１</p>
-                        <p class="good">〇〇件👍</p>
+                        <p>{{ $eventRecords[0]->title }}</p>
+                        <p class="good"> {{ $eventRecords[0]->heart }}件👍</p>
                         <p>
-                            ここには作品の説明文が入ります　～～～～～～～～～～～～～～～～～～～。
+                            {{ $eventRecords[0]->message }}
                         </p>
                     </div>
                 </a>
@@ -26,10 +26,10 @@
                 <a href="{{ asset('detail') }}"><img class="second" src="images/crown-10275-silver.png" alt=""><img
                         src="images/aaa.jpg" alt="" />
                     <div>
-                        <p>制作物２</p>
-                        <p class="good">〇〇件👍</p>
+                        <p>{{ $eventRecords[1]->title }}</p>
+                        <p class="good">{{ $eventRecords[1]->heart }}件👍</p>
                         <p>
-                            ここには作品の説明文が入ります　～～～～～～～～～～～～～～～～～～～。
+                            {{ $eventRecords[1]->message }}
                         </p>
                     </div>
                 </a>
@@ -38,10 +38,10 @@
                 <a href="{{ asset('detail') }}"><img class="third" src="images/crown-10275-bronze.png" alt=""><img
                         src="images/project1.png" alt="" />
                     <div>
-                        <p>制作物３</p>
-                        <p class="good">〇〇件👍</p>
+                        <p>{{ $eventRecords[2]->title }}</p>
+                        <p class="good">{{ $eventRecords[2]->heart }}件👍</p>
                         <p>
-                            ここには作品の説明文が入ります　～～～～～～～～～～～～～～～～～～～。
+                            {{ $eventRecords[2]->message }}
                         </p>
                     </div>
                 </a>
@@ -49,10 +49,10 @@
             <li>
                 <a href="{{ asset('detail') }}"><img src="images/project2.jpg" alt="" />
                     <div>
-                        <p>制作物４</p>
-                        <p class="good">〇〇件👍</p>
+                        <p>{{ $eventRecords[3]->title }}</p>
+                        <p class="good">{{ $eventRecords[3]->heart }}件👍</p>
                         <p>
-                            ここには作品の説明文が入ります　～～～～～～～～～～～～～～～～～～～。
+                            {{ $eventRecords[3]->message }}
                         </p>
                     </div>
                 </a>
@@ -60,10 +60,10 @@
             <li>
                 <a href="###"><img src="images/project3.jpg" alt="" />
                     <div>
-                        <p>制作物５</p>
-                        <p class="good">〇〇件👍</p>
+                        <p>{{ $eventRecords[4]->title }}</p>
+                        <p class="good">{{ $eventRecords[4]->heart }}件👍</p>
                         <p>
-                            ここには作品の説明文が入ります　～～～～～～～～～～～～～～～～～～～。
+                            {{ $eventRecords[4]->message }}
                         </p>
                     </div>
                 </a>
@@ -71,10 +71,10 @@
             <li>
                 <a href="###"><img src="images/aa.jpg" alt="" />
                     <div>
-                        <p>制作物６</p>
-                        <p class="good">〇〇件👍</p>
+                        <p>{{ $eventRecords[5]->title }}</p>
+                        <p class="good">{{ $eventRecords[5]->heart }}件👍</p>
                         <p>
-                            ここには作品の説明文が入ります　～～～～～～～～～～～～～～～～～～～。
+                            {{ $eventRecords[5]->message }}
                         </p>
                     </div>
                 </a>
@@ -82,10 +82,10 @@
             <li>
                 <a href="###"><img src="images/aaa.jpg" alt="" />
                     <div>
-                        <p>制作物７</p>
-                        <p class="good">〇〇件👍</p>
+                        <p>{{ $eventRecords[6]->title }}</p>
+                        <p class="good">{{ $eventRecords[6]->heart }}件👍</p>
                         <p>
-                            ここには作品の説明文が入ります　～～～～～～～～～～～～～～～～～～～。
+                            {{ $eventRecords[6]->message }}
                         </p>
                     </div>
                 </a>
@@ -93,10 +93,10 @@
             <li>
                 <a href="###"><img src="images/project1.png" alt="" />
                     <div>
-                        <p>制作物８</p>
-                        <p class="good">〇〇件👍</p>
+                        <p>{{ $eventRecords[7]->title }}</p>
+                        <p class="good">{{ $eventRecords[7]->heart }}件👍</p>
                         <p>
-                            ここには作品の説明文が入ります　～～～～～～～～～～～～～～～～～～～。
+                            {{ $eventRecords[7]->message }}
                         </p>
                     </div>
                 </a>
