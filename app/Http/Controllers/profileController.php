@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\Event;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,5 +44,19 @@ class profileController extends Controller
         // dd($profile->class);
 
         return redirect('profile');
+    }
+
+    public function confirmation($id)
+    //他人のプロフィールを見る
+    {
+        $event = Event::where('id', $id)->first();
+        $student_id = $event->student_id;
+        $profile = Profile::where('student_id', '=', $student_id)->first();
+        $account = Account::where('student_id', '=', $student_id)->first();
+
+
+
+
+        return view('profile', compact('profile', 'account'));
     }
 }

@@ -18,11 +18,11 @@ class TopPageController extends Controller
 
     public function index()
     {
-        $profile = null;
-        if (Auth::check()) {
-            $profile = Profile::where('student_id', '=', Auth::user()->student_id)->first();
-        }
-        $eventRecords = Event::all();
+        // $profile = null;
+        // if (Auth::check()) {
+        //     $profile = Profile::where('student_id', '=', Auth::user()->student_id)->first();
+        // }
+        $eventRecords = Event::where('status', 1)->get();
 
         // $accountRecords = Account::all();
 
@@ -31,16 +31,18 @@ class TopPageController extends Controller
         // dd($eventRecords);
         // dd($eventRecords[0]->account());
 
-        # 代替案
-        foreach ($eventRecords as $eventRecord) {
-            $accountRecord = Account::where('student_id', '=', $eventRecord->student_id)->first();
-            // dd($accountRecord->name);
-            $eventRecord->name = $accountRecord->name;
-        }
+        // # 代替案
+        // foreach ($eventRecords as $eventRecord) {
+        //     $accountRecord = Account::where('student_id', '=', $eventRecord->student_id)->first();
+        //     // dd($accountRecord->name);
+        //     $eventRecord->name = $accountRecord->name;
+        // }
+
+
 
         // dd($accountRecords[0], $accountRecords[0]->student_id, $eventRecords[0]->student_id);
         // dd($eventRecords, $eventRecords[0], $eventRecords[0]->image, asset('/storage/postimages/'.$eventRecords[0]->image));
-        return view('toppage', compact("eventRecords", "profile"));
+        return view('toppage', compact("eventRecords"));
     }
 
 
@@ -58,30 +60,37 @@ class TopPageController extends Controller
 
         if ($account) {
             Auth::login($account);
-            $eventRecords = Event::all();
-            $profile = Profile::where('student_id', '=', Auth::user()->student_id)->first();
-
-            return view('toppage', compact('account', 'eventRecords', 'profile'));
+            // $eventRecords = Event::all();
+            // $profile = Profile::where('student_id', '=', Auth::user()->student_id)->first();
+            // return view('toppage', compact('account', 'eventRecords', 'profile'))->with('flash_message', 'ログインしました');
+            return redirect('/toppage')->with('flash_message', 'ログイン成功');
+        } else {
+            return redirect('/toppage')->with('flash_message', 'ログイン失敗');
         }
     }
     //ログアウト機能
     public function logout()
     {
         Auth::logout();
-        return redirect('/toppage');
+        return redirect('/toppage')->with('flash_message', 'ログアウトしました');
     }
 
-    //タグ検索
-    public function search(Request $request)
+    // タグ検索
+    public function tag(Request $request)
     {
-        $profile = Profile::where('student_id', '=', Auth::user()->student_id)->first();
-
-        //ハッカソンの場合しかタグ検索を実装していない
+        $selectedCategory = $request->query('category'); // クエリパラメータから選択されたカテゴリを取得
+        // dd($selectedCategory);
         $event = new Event();
-        $eventRecords = Event::all();
+        // $eventRecords = Event::all();
         // dd($eventRecords);
-        $eventRecords = Event::where('tag', 'like', '%1%')->get();
+        $eventRecords = Event::where('status', 1)->where('tag', 'like', '%' . $selectedCategory . '%')->get();
+        if ($eventRecords->isEmpty()) {
+            $eventRecords = Event::where('status', 1)->get();
+            // dd($eventRecords);
+        }
         // dd($eventRecords);
-        return view('toppage', compact("eventRecords", 'profile'));
+        // $eventRecords = Event::where('status', 1)->get();
+
+        return view('toppage', compact("eventRecords"));
     }
 }

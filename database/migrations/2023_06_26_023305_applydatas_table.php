@@ -49,7 +49,14 @@ class ApplydatasTable extends Migration
                 'student_id' => 2220415,
                 'no' => 1,
                 'apply_user_code' => 2220399,
-                'status' => '0'
+                'status' => '2'
+            ],
+            [
+                'id' => null,
+                'student_id' => 2220415,
+                'no' => 2,
+                'apply_user_code' => 2220399,
+                'status' => '3'
             ]
 
         ];

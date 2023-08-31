@@ -4,32 +4,44 @@
 @section('content')
     <div class="flex pt-2 ">
         <div class=" text-center w-full">
-            <button id="bt_admin1" class="px-20 py-3 mx-2 bg-blue-500 text-2xl text-white rounded-lg transition-transform transform scale-110 hover:scale-100 hover:bg-blue-600" onclick="toggleButtonSize('large')">投稿したコミュニティ</button>
-            <button id="bt_admin2" class="px-20 py-3 mx-2 bg-green-500 text-2xl text-white rounded-lg transition-transform transform scale-50 hover:scale-100 hover:bg-green-600" onclick="toggleButtonSize('small')">参加したコミュニティ</button>
+            <a href="{{ route('adminpage.index') }}"><button id="bt_admin1"
+                    class="px-20 py-3 mx-2 bg-blue-500 text-2xl text-white rounded-lg transition-transform transform scale-110 hover:scale-100 hover:bg-blue-600"
+                    onclick="toggleButtonSize('large')">投稿したコミュニティ</button></a>
+            <a href="{{ route('adminpage.join') }}"><button id="bt_admin2"
+                    class="px-20 py-3 mx-2 bg-green-500 text-2xl text-white rounded-lg transition-transform transform scale-50 hover:scale-100 hover:bg-green-600"
+                    onclick="toggleButtonSize('small')">参加したコミュニティ</button></a>
         </div>
     </div>
     <div class="post">
-    <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a id="posting" class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-black" onclick="change('posting')">投稿中</a>
-        </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a id="posted" class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-black bg-white" onclick="change('posted')">投稿済み</a>
-        </li>
-    </ul>
+        <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                <a href="{{ route('adminpage.index') }}" id="posting"
+                    class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-black"
+                    onclick="change('posting')">投稿中</a>
+            </li>
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                <a href="{{ route('adminpage.posed') }}" id="posted"
+                    class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-black bg-white"
+                    onclick="change('posted')">投稿済み</a>
+            </li>
+        </ul>
     </div>
     <div class="join hidden">
-    <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row ">
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a id="joining" class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-black" onclick="change('joining')">参加中</a>
-        </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a id="joined" class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-black bg-white" onclick="change('joined')">参加済み</a>
-        </li>
-    </ul>
+        <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row ">
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                <a id="joining"
+                    class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-black"
+                    onclick="change('joining')">参加中</a>
+            </li>
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                <a href="{{ route('adminpage.joined') }}" id="joined"
+                    class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-black bg-white"
+                    onclick="change('joined')">参加済み</a>
+            </li>
+        </ul>
     </div>
     {{-- Phần còn lại của mã HTML --}}
-     {{-- <div class="flex py-2">
+    {{-- <div class="flex py-2">
         <div class=" text-center w-full">
         <button class="px-40 py-3 mx-2 bg-gray-100 text-black rounded-lg transition-transform transform hover:scale-110">投稿中</button>
         <button class="px-40 py-3 mx-2 bg-gray-100 text-black rounded-lg transition-transform transform hover:scale-110">投稿済み</button>
@@ -43,10 +55,10 @@
     </div> --}}
     <section class="grid grid-cols-1 lg:grid-cols-4 gap-2 p-2 py-3" id="view-index">
         {{-- ここ画像を表示する --}}
-        @php
+        {{-- @php
             $a=5;
         @endphp
-        @for ($i=0;$i<$a;$i++)
+        @for ($i = 0; $i < $a; $i++)
             <article class="photo-list row-span-2 bg-black-100 hover:bg-black-300 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 <a href="{{ asset('detail')}}" class="photo-link ">
                     <img class="photo-thumb photo-1 " src="{{ asset('/storage/images/aa.jpg') }}"
@@ -54,7 +66,7 @@
                 </a>
                 <div class="flex">
                     {{-- user image --}}
-                    <div class="mt-2" style="width:15%">
+        {{-- <div class="mt-2" style="width:15%">
                         <img src="{{asset('/storage/postimages/image2.png')}}" alt="userimg" class="w-10 h-10 rounded-full">
                     </div>
 
@@ -69,7 +81,36 @@
                     <p class="text-gray-400 text-xs text-end pr-5 pb-2"><time datetime="投稿記事の⽇時">aa/aa/aaaa</time></p>
                 </div>
             </article>
-        @endfor
+        @endfor --}}
+        @foreach ($eventRecords as $record)
+            <!-- 一覧画面 -->
+            <article
+                class="photo-list row-span-2 bg-black-100 hover:bg-black-300 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <a href="{{ asset('/detail/' . $record->id) }}" class="photo-link ">
+                    <img class="photo-thumb photo-1 " src="{{ asset('/storage/postimages/' . $record->image) }}"
+                        alt="" width="640" height="360" alt="button-open" />
+                </a>
+                <div class="flex">
+                    {{-- user image --}}
+                    <div class="mt-2" style="width:15%">
+                        <img src="{{ asset('/storage/postimages/image2.png') }}" alt="userimg"
+                            class="w-10 h-10 rounded-full">
+                    </div>
+
+                    <div class="flex" style="width:75%">
+                        <div class="user mb-2">
+                            <p class="title text-yellow-500 font-bold text-xl ">{{ $record->title }} </p>
+                            <a href="">{{ $record->name }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-gray-400 text-xs text-end pr-5 pb-2"><time datetime="投稿記事の⽇時">{{ $record->date }}</time>
+                    </p>
+                </div>
+            </article>
+        @endforeach
+
     </section>
 
     <script>

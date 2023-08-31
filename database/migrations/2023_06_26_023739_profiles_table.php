@@ -38,7 +38,7 @@ class ProfilesTable extends Migration
                 'class' => 'IE2A',
                 'github_url' => '2220399.github.url',
                 'skill' => 'laravel',
-                'comment' => '頑張ります',
+                'comment' => 'バックエンドが得意です',
                 'message' => 'ここはお知らせです'
 
             ],
@@ -48,7 +48,17 @@ class ProfilesTable extends Migration
                 'class' => 'IE2A',
                 'github_url' => '2220415.github.url',
                 'skill' => 'java',
-                'comment' => 'よろしく',
+                'comment' => 'データベース設計が得意です',
+                'message' => 'ここはお知らせです'
+
+            ],
+            [
+                'id' => null,
+                'student_id' => 2220061,
+                'class' => 'SK2A',
+                'github_url' => '2220061.github.url',
+                'skill' => 'laravel,html,css',
+                'comment' => 'フロントが得意です',
                 'message' => 'ここはお知らせです'
 
             ]

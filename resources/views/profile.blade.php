@@ -32,7 +32,8 @@
                 </div>
             </div>
             <div class="private text-lg p-3 mb-4 " style="background-color:#c8bec6;margin:0 10%">
-                <a href="{{route("adminpage")}}">Created community:</a> <p></p>
+                <a href="{{ route('adminpage.index') }}">Created community:</a>
+                <p></p>
             </div>
 
             <div class="private text-lg p-3 mb-4  " style="background-color:#c8bec6;margin:0 10%">
