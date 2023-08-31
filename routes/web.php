@@ -10,6 +10,7 @@ use App\Http\Controllers\applyController;
 use App\Http\Controllers\detailController;
 use App\Http\Controllers\rankingController;
 use App\Http\Controllers\adminpageController;
+use App\Http\Controllers\heartClickController;
 
 
 //toppage
@@ -73,9 +74,13 @@ Route::get('/adminpage/posed', [adminpageController::class, 'posed'])->name('adm
 Route::get('/adminpage/join', [adminpageController::class, 'join'])->name('adminpage.join');
 Route::get('/adminpage/joined', [adminpageController::class, 'joined'])->name('adminpage.joined');
 
+
 //detail page
 Route::get('/ranking', [rankingController::class, 'index'])->name('ranking');
 
 //ranking page
 Route::get('/detail', [detailController::class, 'index'])->name('detail');
 Route::get('/detail/{id}', [detailController::class, 'index']);
+
+//更新ハンドラ
+Route::get('/heartclick/{id}', [heartClickController::class, 'index']);

@@ -7,8 +7,8 @@
             <div class="avatar-con">
                 <div class="avatar">
                     <img src="{{ url('/images/user.png') }}" alt="">
-                    <div class="text-end text-black flex">
-                        <p style="width:30%"></p>
+                    <div class="text-end text-black flex ">
+                        <p style="width:20%"></p>
                         <p> {{ $account->name }}</p>
                         <button class='text-lg text-end pl-6' id="editbt" title="編集"><i class='far'>&#xf044;
                             </i></button>
@@ -36,8 +36,8 @@
                 <p></p>
             </div>
 
-            <div class="private text-lg p-3 mb-4  " style="background-color:#c8bec6;margin:0 10%">
-                <p>Joined community:</p>
+            <div class="private text-lg p-3 mb-4" style="background-color:#c8bec6;margin:0 10%">
+                <a href="{{ route('adminpage.join') }}">Joined community:</a>
             </div>
 
 

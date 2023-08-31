@@ -34,7 +34,7 @@ class adminpageController extends Controller
         $eventRecords = Event::where('student_id', '=', $student_id)->where('status', 0)->get();
         // dd($eventRecords);
 
-        return view('adminpage', compact("eventRecords"));
+        return view('joined', compact("eventRecords"));
     }
 
     //参加したコミュニティ-＞参加後
@@ -48,6 +48,6 @@ class adminpageController extends Controller
         $eventRecords = Event::where('apply_user_code', '=', $student_id)->where('status', 3)->get();
         // dd($eventRecords);
 
-        return view('adminpage', compact("eventRecords"));
+        return view('joined', compact("eventRecords"));
     }
 }

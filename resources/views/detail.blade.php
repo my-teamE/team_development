@@ -43,6 +43,9 @@
                         {{-- 自分がlikeしてる時、click()に変数入れます --}}
                         <button class="like fa fa-thumbs-up" onclick="clicks('click')"> :</button>
                     </p>
+                    @foreach ($applydatas as $applydata)
+                        {{ $applydata->apply_user_code }}
+                    @endforeach
                 </div>
 
 
@@ -61,6 +64,18 @@
             if (aru === 'click') {
                 changecolor.style.color = "aqua";
             }
+            // 更新処理をフックしている
+            const currentUrl = location.pathname;
+            const id = currentUrl.split('/')[2];
+            console.log(id);
+            fetch(`http://localhost:8000/api/heartclick/${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("フック出来ている", data);
+                })
+                .catch(error => {
+                    console.error("エラー発生", error);
+                })
         }
     </script>
 @endsection

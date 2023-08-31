@@ -2,8 +2,6 @@
 @section('pageTitle', 'postpage')
 {{-- @section('title', 'ECC コンミュニティ') --}}
 @section('content')
-    <script></script>
-
     <div class="split-container">
 
         <div class="location-contr" id="" style="padding:20px 0px">
