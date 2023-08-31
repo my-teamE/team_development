@@ -9,17 +9,16 @@
                 <img src="{{ asset('/storage/postimages/image2.png') }}" alt="userimg" class="w-10 h-10 rounded-full">
             </div>
             <div>
-            {{-- <div class="title text-yellow-500 text-2xl ">{{ $record->title }} </div> --}}
-            <div class="title text-yellow-500 text-2xl ">Title</div>
-            <div class="user font-bold ml-1 "><a href="">user</a></div>
-            {{-- <div class="user font-bold mb-2" style="width:90%"><a href="">{{ $record->name }}</a></div> --}}
+                {{-- <div class="title text-yellow-500 text-2xl ">{{ $record->title }} </div> --}}
+                <div class="title text-yellow-500 text-2xl ">{{ $clickedEvent->title }}</div>
+                <div class="user font-bold ml-1 "><a href="">user</a></div>
+                {{-- <div class="user font-bold mb-2" style="width:90%"><a href="">{{ $record->name }}</a></div> --}}
             </div>
         </div>
         <div class="detail-layout flex mt-3">
             <div class="image-container border border-gray-300 rounded-lg overflow-hidden" style="width:600px; height:400px">
-                <img class="w-full h-full object-cover"
-                    src="{{ asset('/storage/postimages/image2.png') }}">
-                    {{-- src="{{ asset('/storage/postimages/') . '/' . $event->image }}"alt="" /> --}}
+                <img class="w-full h-full object-cover" src="{{ asset('/storage/postimages/image2.png') }}">
+                {{-- src="{{ asset('/storage/postimages/') . '/' . $event->image }}"alt="" /> --}}
 
                 <br>
 
@@ -29,23 +28,18 @@
                     <!-- タイトル -->
                     {{-- <h1 class="text-3xl text-center" style="color:white">{{ $event->title }}</h1> --}}
 
-                    <h1 class="text-3xl text-center" style="color:white">title</h1>
+                    <h1 class="text-3xl text-center" style="color:white">{{ $clickedEvent->title }}</h1>
                     <br>
                     <!-- 本文 -->
                     <p class="i-desc ml-2"style="font-size:large">
                         {{-- {{ $event->message }} --}}
-                        何もない
-                        何もない
-                        何もない
-                        何もない
+                        {{ $clickedEvent->message }}
                     </p>
                 </div>
                 <hr>
                 <div class="bg-yellow ml-5 mb-2">
                     <p class="i-desc ml-2"style="font-size:large">
-                       参加人数：
-                    </p>
-                    <p class="i-desc ml-2"style="font-size:large">
+                        いいね
                         {{-- 自分がlikeしてる時、click()に変数入れます --}}
                         <button class="like fa fa-thumbs-up" onclick="clicks('click')"> :</button>
                     </p>
@@ -55,19 +49,18 @@
             </div>
         </div>
         <br>
-        <p class="text-lg">開催場所：ECCコンピューター専門学校</p>
+        {{-- <p class="text-lg">開催場所：ECCコンピューター専門学校</p>
         {{-- <p class="text-lg">日付など：{{ $event->date }} -未定</p> --}}
-        <p class="text-lg">日付など：今日 -未定</p>
+        {{-- <p class="text-lg">日付など：今日 -未定</p> --}}
 
     </main>
     <script>
-        function clicks(aru){
+        function clicks(aru) {
             const changecolor = document.querySelector('.like');
             console.log(changecolor)
-                if(aru ==='click'){
-                    changecolor.style.color="aqua";
-                }
+            if (aru === 'click') {
+                changecolor.style.color = "aqua";
+            }
         }
     </script>
 @endsection
-

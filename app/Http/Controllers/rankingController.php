@@ -12,14 +12,16 @@ class rankingController extends Controller
     {
         $eventRecords = Event::orderBy('heart', 'DESC')->get();
 
-        // これはeventの名前を表しています(制作物1.制作物2...に当たる部分に挿入されると思います)
-        dd($eventRecords->title);
+        // dd($eventRecords);
 
-        // これはeventのハートの個数を表しています(○○件グッドに当たる部分に挿入されると思います)
-        dd($eventRecords->heart);
+        // // これはeventの名前を表しています(制作物1.制作物2...に当たる部分に挿入されると思います)
+        // dd($eventRecords->title);
 
-        // これはeventの本文を表しています(ここは作品の説明文が入ります ～～～～～～～～～に当たる部分に挿入されると思います)
-        dd($eventRecords->message);
-        return view('ranking', compact($eventRecords));
+        // // これはeventのハートの個数を表しています(○○件グッドに当たる部分に挿入されると思います)
+        // dd($eventRecords->heart);
+
+        // // これはeventの本文を表しています(ここは作品の説明文が入ります ～～～～～～～～～に当たる部分に挿入されると思います)
+        // dd($eventRecords->message);
+        return view('ranking', compact('eventRecords'));
     }
 }

@@ -9,21 +9,23 @@ use Illuminate\Http\Request;
 class detailController extends Controller
 {
     // レンダリング時に必要なデータと使い方を表しています
-    public function index()
+    public function index($id)
     {
+        // dd($id);
         // TODO:EventのIDがどのようにして送られてくるのか決めてから完成
-        $clickedEvent = Event::where('id', 1)->get();
+        $clickedEvent = Event::where('id', $id)->first();
+        // dd($clickedEvent);
 
         // これはeventのタイトルを表しています(titleに当たる部分です)
-        dd($clickedEvent->title);
+        // dd($clickedEvent->title);
 
         // これはeventの作成者を表しています(userに当たる部分です)
-        $username = Account::where('student_id', $clickedEvent->student_id)->name;
-        dd($username);
+        $username = Account::where('student_id', $clickedEvent->student_id)->first()->name;
+        // dd($username);
 
         // これはeventのいいね数を表しています(いいね！:に当たる部分です)
-        dd($clickedEvent->heart);
+        // dd($clickedEvent->heart);
 
-        return view('detail', compact($clickedEvent));
+        return view('detail', compact('clickedEvent'));
     }
 }
