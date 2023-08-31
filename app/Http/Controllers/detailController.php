@@ -34,10 +34,10 @@ class detailController extends Controller
         // dd($refererInfo);
         if($refererInfo === "http://localhost:8000/adminpage/index") {
             // adminページから
-            $student_id = Auth::user()->student_id;
-            $tempEvent = Event::where('id', $id)->first();
-            $tempEventStudentId = $tempEvent->student_id;
-            $tempEventNo = $tempEvent->no;
+            $student_id = Auth::user()->student_id;             //login
+            $tempEvent = Event::where('id', $id)->first();      //7
+            $tempEventStudentId = $tempEvent->student_id;       //2220415
+            $tempEventNo = $tempEvent->no;                      //2
 
             $applydatas = ApplyData::where('student_id', $student_id)->where('status', 0)->where('apply_user_code', '!=', $student_id)->where('no', $tempEventNo)->get();
             // dd($applydatas);
