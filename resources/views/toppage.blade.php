@@ -36,16 +36,32 @@
                 <p style="font-size: 25px; padding-left:25px">過去の代表制作品</p>
                 </a>
                 <div class="slider flex">
-                        @foreach ($eventRecords as $record)
+                        {{-- @foreach ($eventRecords as $record)
                         <div class="slick-img  relative w-full h-0 aspect-16/8">
                             <img class="" src="{{ asset('/storage/postimages/' . $record->image) }}">
                         </div>
-                        @endforeach
-                        <div class="slick-img pt-2">
+                        @endforeach --}}
+
+                        <div class="slick-img ">
+                            <a href=""><img src="{{ url('/images/aaa.jpg') }}" alt="" /></a>
+                        </div>
+                        <div class="slick-img ">
                             <a href=""><img src="{{ url('/images/student1.jpg') }}" alt="Image" /></a>
                         </div>
-                        <div class="slick-img pt-2">
-                            <a href=""><img src="{{ url('/images/aaa.jpg') }}" alt="" /></a>
+                        <div class="slick-img ">
+                            <a href=""><img src="{{ url('/images/aa.jpg') }}" alt="" /></a>
+                        </div>
+                        <div class="slick-img ">
+                            <a href=""><img src="{{ url('/images/project1.png') }}" alt="Image" /></a>
+                        </div>
+                        <div class="slick-img ">
+                            <a href=""><img src="{{ url('/images/project2.jpg') }}" alt="" /></a>
+                        </div>
+                        <div class="slick-img ">
+                            <a href=""><img src="{{ url('/images/20210311134726.jpg') }}" alt="Image" /></a>
+                        </div>
+                        <div class="slick-img ">
+                            <a href=""><img src="{{ url('/images/project3.jpg') }}" alt="" /></a>
                         </div>
                 </div>
 

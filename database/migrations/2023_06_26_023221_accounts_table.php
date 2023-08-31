@@ -62,6 +62,25 @@ class AccountsTable extends Migration
                 'gender' => 'man',
                 'image' => 'megane.jpg'
 
+            ],
+            [
+                'id' => null,
+                'student_id' => 2220140,
+                'name' => '大窪 悠也',
+                'email' => '2220140@ecc.ac.jp',
+                'password' => 'okubou',
+                'gender' => 'man',
+                'image' => 'okubou.jpg'
+
+            ], [
+                'id' => null,
+                'student_id' => 2220149,
+                'name' => '西田恭也',
+                'email' => '2220149@ecc.ac.jp',
+                'password' => 'nishida',
+                'gender' => 'man',
+                'image' => 'nishida.jpg'
+
             ]
         ];
         $qb->insert($insert);
