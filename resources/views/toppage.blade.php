@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('pageTitle', 'postpage')
-{{-- @section('title', 'ECC コンミュニティ') --}}
+@section('title', 'つながりを持ち、コミュニケーションを取り、情報を共有する')
 @section('content')
     <div class="split-container">
 

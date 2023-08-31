@@ -27,7 +27,7 @@
                     <h2 class=" text-white text-5xl" style="font-family: 'Aclonica', sans-serif;"><b
                             style="color: aqua">ECC </b>Community</h2>
                 </a>
-                <h2 class="text-3xl text-white pl-50">@yield('title')</h2>
+                <h2 class="text-2xl text-white pl-50">@yield('title')</h2>
             </div>
         </header>
         <main style="background-color:rgb(56, 54, 54);padding:0 100px">

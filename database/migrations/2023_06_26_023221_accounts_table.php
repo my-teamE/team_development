@@ -50,7 +50,7 @@ class AccountsTable extends Migration
                 'email' => '2220415@ecc.ac.jp',
                 'password' => 'password',
                 'gender' => 'man',
-                'image' => 'megane.jpg'
+                'image' => 'ichijima.jpg'
 
             ],
             [
