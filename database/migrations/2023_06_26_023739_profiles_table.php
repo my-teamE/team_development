@@ -37,7 +37,7 @@ class ProfilesTable extends Migration
                 'student_id' => 2220399,
                 'class' => 'IE2A',
                 'github_url' => '2220399.github.url',
-                'skill' => 'laravel,database',
+                'skill' => 'laravel',
                 'comment' => 'バックエンドが得意です',
                 'message' => 'ここはお知らせです'
 
@@ -47,7 +47,7 @@ class ProfilesTable extends Migration
                 'student_id' => 2220415,
                 'class' => 'IE2A',
                 'github_url' => '2220415.github.url',
-                'skill' => 'java,laravel',
+                'skill' => 'java',
                 'comment' => 'データベース設計が得意です',
                 'message' => 'ここはお知らせです'
 
@@ -57,31 +57,11 @@ class ProfilesTable extends Migration
                 'student_id' => 2220061,
                 'class' => 'SK2A',
                 'github_url' => '2220061.github.url',
-                'skill' => 'laravel,html,css,javascrips',
+                'skill' => 'laravel,html,css',
                 'comment' => 'フロントが得意です',
                 'message' => 'ここはお知らせです'
 
-            ],
-            [
-                'id' => null,
-                'student_id' => 2220140,
-                'class' => 'IE2A',
-                'github_url' => '22204140.github.url',
-                'skill' => 'html,css',
-                'comment' => 'HTML設計が得意です',
-                'message' => 'ここはお知らせです'
-
-            ],
-            [
-                'id' => null,
-                'student_id' => 2220149,
-                'class' => 'IE2A',
-                'github_url' => '2220149.github.url',
-                'skill' => 'html,css',
-                'comment' => 'HTML設計が得意です',
-                'message' => 'ここはお知らせです'
-
-            ],
+            ]
         ];
         $qb->insert($insert);
     }
