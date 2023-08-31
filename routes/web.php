@@ -12,6 +12,7 @@ use App\Http\Controllers\rankingController;
 use App\Http\Controllers\adminpageController;
 
 
+
 //toppage
 Route::get('toppage', [toppageController::class, 'index'])->name('toppage');
 //post
@@ -72,6 +73,7 @@ Route::get('/adminpage/index', [adminpageController::class, 'index'])->name('adm
 Route::get('/adminpage/posed', [adminpageController::class, 'posed'])->name('adminpage.posed');
 Route::get('/adminpage/join', [adminpageController::class, 'join'])->name('adminpage.join');
 Route::get('/adminpage/joined', [adminpageController::class, 'joined'])->name('adminpage.joined');
+
 
 //detail page
 Route::get('/ranking', [rankingController::class, 'index'])->name('ranking');
