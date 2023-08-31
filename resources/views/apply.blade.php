@@ -10,11 +10,14 @@
             <div>
                 {{-- <div class="title text-yellow-500 text-2xl ">{{ $record->title }} </div> --}}
                 <div class="title text-yellow-500 text-2xl ">{{ $event->title }}</div>
-                <div class="user font-bold ml-1 "><a href="">{{ $account->name }}</a></div>
+                {{-- <a href="/confirmation/{{ $id }}">
+                    <p class="text-lg">{{ $account->name }}さんのプロフィール</p>
+                </a> --}}
+                <div class="user font-bold ml-1 "><a href="/confirmation/{{ $id }}">{{ $account->name }}</a></div>
                 {{-- <div class="user font-bold mb-2" style="width:90%"><a href="">{{ $record->name }}</a></div> --}}
             </div>
         </div>
-        <div class="detail-layout flex mt-3">
+        <div class="detail-layout flex mt-3"> 
             <div class="image-container border border-gray-300 rounded-lg overflow-hidden"
                 style="width:650px; height:400px">
                 <img class="w-full h-full object-cover"
@@ -49,9 +52,6 @@
 
         </div>
         <br>
-        <a href="/confirmation/{{ $id }}">
-            <p class="text-lg">{{ $account->name }}さんのプロフィール</p>
-        </a>
     </main>
     </section>
 
