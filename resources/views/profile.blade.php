@@ -6,7 +6,7 @@
         <div class="profile">
             <div class="avatar-con">
                 <div class="avatar">
-                    <img src="{{ asset('storage/userimage/'. $account->image) }}" alt="">
+                    <img src="{{ url('/images/user.png') }}" alt="">
                     <div class="text-end text-black flex ">
                         <p style="width:20%"></p>
                         <p> {{ $account->name }}</p>

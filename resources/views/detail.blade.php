@@ -43,11 +43,11 @@
                         {{-- 自分がlikeしてる時、click()に変数入れます --}}
                         <button class="like fa fa-thumbs-up" onclick="clicks('click')"> :</button>
                     </p>
-                    <p class="i-desc ml-2"style="font-size:large">
-                        参加したメンバー：
-                    </p>
+                    @foreach ($applydatas as $applydata)
+                        {{ $applydata->student_id }}
+                    @endforeach
                 </div>
-                
+
 
             </div>
         </div>
@@ -58,12 +58,11 @@
 
     </main>
     <script>
-
         function clicks(aru) {
             const changecolor = document.querySelector('.like');
             console.log(changecolor)
             if (aru === 'click') {
-                changecolor.style.color = "blue";
+                changecolor.style.color = "aqua";
             }
             // 更新処理をフックしている
             const currentUrl = location.pathname;
