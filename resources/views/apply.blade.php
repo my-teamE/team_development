@@ -8,14 +8,15 @@
                 <img src="{{ asset('/storage/postimages/image2.png') }}" alt="userimg" class="w-10 h-10 rounded-full">
             </div>
             <div>
-            {{-- <div class="title text-yellow-500 text-2xl ">{{ $record->title }} </div> --}}
-            <div class="title text-yellow-500 text-2xl ">{{ $event->title }}</div>
-            <div class="user font-bold ml-1 "><a href="">{{ $account->name }}</a></div>
-            {{-- <div class="user font-bold mb-2" style="width:90%"><a href="">{{ $record->name }}</a></div> --}}
+                {{-- <div class="title text-yellow-500 text-2xl ">{{ $record->title }} </div> --}}
+                <div class="title text-yellow-500 text-2xl ">{{ $event->title }}</div>
+                <div class="user font-bold ml-1 "><a href="">{{ $account->name }}</a></div>
+                {{-- <div class="user font-bold mb-2" style="width:90%"><a href="">{{ $record->name }}</a></div> --}}
             </div>
         </div>
         <div class="detail-layout flex mt-3">
-            <div class="image-container border border-gray-300 rounded-lg overflow-hidden" style="width:650px; height:400px">
+            <div class="image-container border border-gray-300 rounded-lg overflow-hidden"
+                style="width:650px; height:400px">
                 <img class="w-full h-full object-cover"
                     src="{{ asset('/storage/postimages/') . '/' . $event->image }}"alt="" />
                 <br>
@@ -48,8 +49,9 @@
 
         </div>
         <br>
-        <p class="text-lg">開催場所：ECCコンピューター専門学校</p>
-        <p class="text-lg">日付など：{{ $event->date }} -未定</p>
+        <a href="/confirmation/{{ $id }}">
+            <p class="text-lg">{{ $account->name }}さんのプロフィール</p>
+        </a>
     </main>
     </section>
 

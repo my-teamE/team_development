@@ -16,6 +16,9 @@ use App\Http\Controllers\adminpageController;
 Route::get('toppage', [toppageController::class, 'index'])->name('toppage');
 //post
 Route::get('profile', [profileController::class, 'index'])->name('profile');
+
+Route::get('/confirmation/{id}', [profileController::class, 'confirmation']);
+
 Route::post('profile', [profileController::class, 'edit'])->name('edit');
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +44,8 @@ Route::post("/postdata", [postDataController::class, "post"]);
 //toppage関連
 Route::post('/toppage', [TopPageController::class, "index"])->name('index');
 //タグ検索
-Route::get('/routesearch', [TopPageController::class, "search"])->name('search');
-
+// Route::get('/routesearch', [TopPageController::class, "search"])->name('search');
+Route::get('/events', [TopPageController::class, 'tag'])->name('events.tag');
 //ログイン後の処理
 Route::post('/toppage', [TopPageController::class, "login"])->name('login');
 Route::get('/logout', function () {
@@ -65,10 +68,14 @@ Route::get('/apply/{id}', [applyController::class, 'apply']);
 Route::get('/applied/{id}', [applyController::class, 'applied']);
 
 //admin page
-Route::get('/adminpage', [adminpageController::class, 'index'])->name('adminpage');
+Route::get('/adminpage/index', [adminpageController::class, 'index'])->name('adminpage.index');
+Route::get('/adminpage/posed', [adminpageController::class, 'posed'])->name('adminpage.posed');
+Route::get('/adminpage/join', [adminpageController::class, 'join'])->name('adminpage.join');
+Route::get('/adminpage/joined', [adminpageController::class, 'joined'])->name('adminpage.joined');
 
 //detail page
 Route::get('/ranking', [rankingController::class, 'index'])->name('ranking');
 
 //ranking page
 Route::get('/detail', [detailController::class, 'index'])->name('detail');
+Route::get('/detail/{id}', [detailController::class, 'index']);
