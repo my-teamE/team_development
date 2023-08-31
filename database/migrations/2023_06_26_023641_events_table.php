@@ -99,7 +99,7 @@ class EventsTable extends Migration
                                 チームでの参加も可能ですが、個人参加でも大丈夫です。
                                 イベント中はコードの共有やアイデアのブレインストーミングを積極的に行いましょう。',
                 'image' => 'image5.png',
-                'status' => 0,
+                'status' => 1,
                 'heart' => 0
             ],
             [
@@ -124,10 +124,51 @@ class EventsTable extends Migration
                 'message' => 'アート&クラフト愛好者のためのワークショップです。様々な素材を使用して、
                                 クリエイティブな作品を制作しましょう。経験者も初心者も歓迎です。',
                 'image' => 'image7.png',
-                'status' => 0,
+                'status' => 1,
                 'heart' => 0
 
-            ]
+            ],
+            [
+                'id' => null,
+                'student_id' => 2220415,
+                'no' => 2,
+                'title' => 'デザインワークショップ',
+                'tag' => '2',
+                'message' => 'デザイン愛好者のためのワークショップです。新しいデザインのアイデアを共有し、
+                                スキルを向上させる場です。デザイン業界のプロも参加します。',
+                'image' => 'image8.png',
+                'status' => 1,
+                'heart' => 0
+
+            ],
+            [
+                'id' => null,
+                'student_id' => 2220415,
+                'no' => 3,
+                'title' => 'デザインワークショップ',
+                'tag' => '2',
+                'message' => 'Web開発に興味がある方のための勉強会です。HTML、CSS、JavaScriptなど
+                                Web開発に関する基本的な知識を学びます。初心者歓迎です。',
+                'image' => 'image9.png',
+                'status' => 1,
+                'heart' => 0
+
+            ],
+            [
+                'id' => null,
+                'student_id' => 2220415,
+                'no' => 4,
+                'title' => 'デザインワークショップ',
+                'tag' => '2',
+                'message' => 'ハッカソンイベントです。チームでアイデアを出し、一定時間内にプロトタイプを開発します。
+                                プログラマー、デザイナー、アイデアマン、どなたでも参加できます。',
+                'image' => 'image9.png',
+                'status' => 1,
+                'heart' => 0
+
+            ],
+
+
 
 
 
