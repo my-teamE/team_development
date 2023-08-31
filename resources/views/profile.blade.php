@@ -35,7 +35,7 @@
                 <a href="{{route("adminpage")}}">Created community:</a> <p></p>
             </div>
 
-            <div class="private text-lg p-3 mb-4  " style="background-color:#c8bec6;margin:0 10%">
+            <div class="private text-lg p-3 mb-4" style="background-color:#c8bec6;margin:0 10%">
                 <p>Joined community:</p>
             </div>
 

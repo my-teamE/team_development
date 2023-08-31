@@ -3,6 +3,8 @@
 {{-- @section('title', 'ECC コンミュニティ') --}}
 @section('content')
 <script></script>
+
+    
         <div class="split-container">
             <div class="location-contr" id="" style="padding:20px 0px">
                 <div id="location" class="text-center py-3">
