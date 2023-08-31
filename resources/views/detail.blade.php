@@ -44,7 +44,7 @@
                         <button class="like fa fa-thumbs-up" onclick="clicks('click')"> :</button>
                     </p>
                     @foreach ($applydatas as $applydata)
-                        {{ $applydata->student_id }}
+                        {{ $applydata->apply_user_code }}
                     @endforeach
                 </div>
 

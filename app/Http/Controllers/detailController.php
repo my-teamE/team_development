@@ -39,7 +39,7 @@ class detailController extends Controller
             $tempEventStudentId = $tempEvent->student_id;
             $tempEventNo = $tempEvent->no;
 
-            $applydatas = ApplyData::where('student_id', $student_id)->where('status', 0)->where('apply_user_code', '!=', $student_id)->where('no', $id)->get();
+            $applydatas = ApplyData::where('student_id', $student_id)->where('status', 0)->where('apply_user_code', '!=', $student_id)->where('no', $tempEventNo)->get();
             // dd($applydatas);
 
         } else if ($refererInfo === "http://localhost:8000/ranking") {
