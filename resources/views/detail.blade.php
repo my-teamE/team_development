@@ -38,17 +38,25 @@
                 </div>
                 <hr>
                 <div class="bg-yellow ml-5 mb-2">
+
                     <p class="i-desc ml-2"style="font-size:large">
                         いいね
                         {{-- 自分がlikeしてる時、click()に変数入れます --}}
                         <button class="like fa fa-thumbs-up" onclick="clicks('click')"> :</button>
                     </p>
+                    <b class="text-lg"> 応募メンバー：</b>
+
                     @foreach ($applydatas as $applydata)
-                        {{ $applydata->apply_user_code }}
+                        <div class="flex">
+                            <div class="w-2/3 text-xl" id="apply_user_code">{{ $applydata->apply_user_code }}</div>
+                            <div class="w-1/3 text-end">
+                                <div style="display: none" class="uniqueId">{{ $applydata->id }}</div>
+                                <button class="bg-blue-600 px-2 py-1 rounded-1" id="resolveBtn">許可</button>
+                                <button class="bg-red-600 px-2 py-1 rounded-1" id="rejectBtn">拒否</button>
+                            </div>
+                        </div>
                     @endforeach
                 </div>
-
-
             </div>
         </div>
         <br>
@@ -77,5 +85,25 @@
                     console.error("エラー発生", error);
                 })
         }
+
+        const resolveButton = document.querySelector("#resolveBtn");
+        const rejectButton = document.querySelector("#rejectBtn");
+
+        resolveButton.addEventListener("click", () => {
+            console.log("resolveButton発火");
+            const uniqueId = document.querySelector(".uniqueId").innerText;
+            console.log(uniqueId);
+            fetch(`http://localhost:8000/api/joined/${uniqueId}`)
+            .then(data => {
+                console.log("成功", data);
+            })
+            .catch(error => {
+                console.error("エラー発生", error);
+            });
+        });
+        rejectButton.addEventListener("click", () => {
+            console.log("rejectButton発火");
+
+        })
     </script>
 @endsection

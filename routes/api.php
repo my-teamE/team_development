@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\heartClickController;
+use App\Http\Controllers\joinedController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/heartclick/{id}', [heartClickController::class, 'index']);
+Route::get('/joined/{id}', [joinedController::class, 'index']);
