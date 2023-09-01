@@ -23,6 +23,7 @@ class TopPageController extends Controller
         //     $profile = Profile::where('student_id', '=', Auth::user()->student_id)->first();
         // }
         $eventRecords = Event::where('status', 1)->get();
+        $eventRankRecords = Event::where('status', 0)->orderBy('heart', 'desc')->limit(8)->get();
 
         // $accountRecords = Account::all();
 
@@ -42,7 +43,7 @@ class TopPageController extends Controller
 
         // dd($accountRecords[0], $accountRecords[0]->student_id, $eventRecords[0]->student_id);
         // dd($eventRecords, $eventRecords[0], $eventRecords[0]->image, asset('/storage/postimages/'.$eventRecords[0]->image));
-        return view('toppage', compact("eventRecords"));
+        return view('toppage', compact("eventRecords", "eventRankRecords"));
     }
 
 
@@ -89,6 +90,6 @@ class TopPageController extends Controller
         }
 
 
-        return view('toppage', compact("eventRecords"));
+        return view('toppage', compact("eventRecords", "eventRankRecords"));
     }
 }
