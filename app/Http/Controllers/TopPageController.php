@@ -23,6 +23,7 @@ class TopPageController extends Controller
         //     $profile = Profile::where('student_id', '=', Auth::user()->student_id)->first();
         // }
         $eventRecords = Event::where('status', 1)->get();
+        $eventRankRecords = Event::where('status', 0)->orderBy('heart', 'desc')->limit(8)->get();
 
         // $accountRecords = Account::all();
 
@@ -42,7 +43,7 @@ class TopPageController extends Controller
 
         // dd($accountRecords[0], $accountRecords[0]->student_id, $eventRecords[0]->student_id);
         // dd($eventRecords, $eventRecords[0], $eventRecords[0]->image, asset('/storage/postimages/'.$eventRecords[0]->image));
-        return view('toppage', compact("eventRecords"));
+        return view('toppage', compact("eventRecords", "eventRankRecords"));
     }
 
 
@@ -79,18 +80,16 @@ class TopPageController extends Controller
     public function tag(Request $request)
     {
         $selectedCategory = $request->query('category'); // クエリパラメータから選択されたカテゴリを取得
-        // dd($selectedCategory);
-        $event = new Event();
-        // $eventRecords = Event::all();
-        // dd($eventRecords);
-        $eventRecords = Event::where('status', 1)->where('tag', 'like', '%' . $selectedCategory . '%')->get();
+        $eventRecords = Event::where('status', 1)
+            ->where('tag', 'like', '%' . $selectedCategory . '%')
+            ->get();
+
+        // タグが見つからない場合は全てのイベントを取得
         if ($eventRecords->isEmpty()) {
             $eventRecords = Event::where('status', 1)->get();
-            // dd($eventRecords);
         }
-        // dd($eventRecords);
-        // $eventRecords = Event::where('status', 1)->get();
 
-        return view('toppage', compact("eventRecords"));
+
+        return view('toppage', compact("eventRecords", "eventRankRecords"));
     }
 }

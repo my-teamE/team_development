@@ -47,7 +47,8 @@ class AccountsTable extends Migration
                 'name' => '市島功大',
                 'email' => '2220415@ecc.ac.jp',
                 'password' => 'password',
-                'gender' => 'man'
+                'gender' => 'man',
+                'image' => 'ichijima.jpg',
 
             ],
             [

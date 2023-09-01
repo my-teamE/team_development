@@ -41,8 +41,9 @@ class detailController extends Controller
 
             $applydatas = ApplyData::where('student_id', $student_id)->where('status', 0)->where('apply_user_code', '!=', $student_id)->where('no', $tempEventNo)->get();
             // dd($applydatas);
-
         } else if ($refererInfo === "http://localhost:8000/ranking" || "http://127.0.0.1:8000/ranking") {
+
+        } else if ($refererInfo === "http://localhost:8000/ranking") {
             // rankingページから
             $applydatas = [];
         } else {
