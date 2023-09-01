@@ -32,7 +32,7 @@ class detailController extends Controller
         // リファラ情報によって渡す値を決める
         $refererInfo = $request->headers->get('referer');
         // dd($refererInfo);
-        if($refererInfo === "http://localhost:8000/adminpage/index") {
+        if ($refererInfo === "http://127.0.0.1:8000/adminpage/index") {
             // adminページから
             $student_id = Auth::user()->student_id;             //login
             $tempEvent = Event::where('id', $id)->first();      //7
@@ -42,7 +42,7 @@ class detailController extends Controller
             $applydatas = ApplyData::where('student_id', $student_id)->where('status', 0)->where('apply_user_code', '!=', $student_id)->where('no', $tempEventNo)->get();
             // dd($applydatas);
 
-        } else if ($refererInfo === "http://localhost:8000/ranking") {
+        } else if ($refererInfo === "http://127.0.0.1:8000/ranking") {
             // rankingページから
             $applydatas = [];
         } else {

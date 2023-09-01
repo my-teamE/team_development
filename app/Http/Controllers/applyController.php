@@ -37,7 +37,7 @@ class applyController extends Controller
 
     public function applied($id)
     {
-        $eventRecords = Event::all();
+        $eventRecords = Event::all()->where('status', 1);
         $applydata = new Applydata();
         $eventStundent = Event::where('id', $id)->first();
 
