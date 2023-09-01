@@ -68,9 +68,10 @@ class applyController extends Controller
 
 
         $profile = Profile::where('student_id', '=', Auth::user()->student_id)->first();
+        $eventRankRecords = Event::where('status', 0)->orderBy('heart', 'desc')->limit(8)->get();
 
 
         // dd($message);
-        return view("/toppage", compact('profile', 'eventRecords'));
+        return view("/toppage", compact('profile', 'eventRecords', 'eventRankRecords'));
     }
 }

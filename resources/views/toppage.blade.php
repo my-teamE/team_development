@@ -36,25 +36,31 @@
             <p style="font-size: 25px; padding-left:25px">過去の代表制作品</p>
             <div class="slider flex">
                 <div class="slick-img">
-                    <img src="{{ url('images/project1.png') }}" alt="Image" />
+                    <img src="{{ asset('/storage/postimages/' . $eventRankRecords[0]->image) }}" alt="Image" />
                 </div>
                 <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/project2.jpg') }}" alt="Image" /></a>
+                    <a href=""><img src="{{ asset('/storage/postimages/' . $eventRankRecords[1]->image) }}"
+                            alt="Image" /></a>
                 </div>
                 <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/project3.jpg') }}" alt="Image" /></a>
+                    <a href=""><img src="{{ asset('/storage/postimages/' . $eventRankRecords[2]->image) }}"
+                            alt="Image" /></a>
                 </div>
                 <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/student1.jpg') }}" alt="Image" /></a>
+                    <a href=""><img src="{{ asset('/storage/postimages/' . $eventRankRecords[3]->image) }}"
+                            alt="Image" /></a>
                 </div>
                 <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/aaa.jpg') }}" alt="" /></a>
+                    <a href=""><img src="{{ asset('/storage/postimages/' . $eventRankRecords[4]->image) }}"
+                            alt="" /></a>
                 </div>
                 <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/20210311134726.jpg') }}" alt="" /></a>
+                    <a href=""><img src="{{ asset('/storage/postimages/' . $eventRankRecords[5]->image) }}"
+                            alt="" /></a>
                 </div>
                 <div class="slick-img">
-                    <a href=""><img src="{{ url('/images/student1.jpg') }}" alt="" /></a>
+                    <a href=""><img src="{{ asset('/storage/postimages/' . $eventRankRecords[6]->image) }}"
+                            alt="" /></a>
                 </div>
 
             </div>

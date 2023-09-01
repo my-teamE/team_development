@@ -60,7 +60,7 @@ class EventsTable extends Migration
                                 勉強会の進行に合わせて、参加者同士で質問やアイデアの共有を奨励します。
                                 Javaの開発環境を自分のノートパソコンにインストールしてくることをお勧めします。',
                 'image' => 'image2.png',
-                'status' => 1,
+                'status' => 0,
                 'heart' => 0
             ],
             [
@@ -73,7 +73,7 @@ class EventsTable extends Migration
                                 セッションごとに異なるトピックが取り上げられるため、スケジュールを確認しておいてください。
                                 質疑応答やディスカッションへの積極的な参加を歓迎します。',
                 'image' => 'image3.png',
-                'status' => 1,
+                'status' => 0,
                 'heart' => 0
             ],
             [
@@ -86,7 +86,7 @@ class EventsTable extends Migration
                                 ポスターセッションやプレゼンテーションがありますので、発表者は準備をしっかりとしてください。
                                 イベントの参加登録が必要ですので、事前に登録をお願いします。',
                 'image' => 'image4.png',
-                'status' => 1,
+                'status' => 0,
                 'heart' => 0
             ],
             [
@@ -99,7 +99,7 @@ class EventsTable extends Migration
                                 チームでの参加も可能ですが、個人参加でも大丈夫です。
                                 イベント中はコードの共有やアイデアのブレインストーミングを積極的に行いましょう。',
                 'image' => 'image5.png',
-                'status' => 1,
+                'status' => 0,
                 'heart' => 0
             ],
             [
@@ -137,7 +137,7 @@ class EventsTable extends Migration
                 'message' => 'デザイン愛好者のためのワークショップです。新しいデザインのアイデアを共有し、
                                 スキルを向上させる場です。デザイン業界のプロも参加します。',
                 'image' => 'image8.png',
-                'status' => 1,
+                'status' => 0,
                 'heart' => 0
 
             ],
@@ -150,7 +150,7 @@ class EventsTable extends Migration
                 'message' => 'Web開発に興味がある方のための勉強会です。HTML、CSS、JavaScriptなど
                                 Web開発に関する基本的な知識を学びます。初心者歓迎です。',
                 'image' => 'image9.png',
-                'status' => 1,
+                'status' => 0,
                 'heart' => 0
 
             ],
@@ -163,7 +163,7 @@ class EventsTable extends Migration
                 'message' => 'ハッカソンイベントです。チームでアイデアを出し、一定時間内にプロトタイプを開発します。
                                 プログラマー、デザイナー、アイデアマン、どなたでも参加できます。',
                 'image' => 'image9.png',
-                'status' => 1,
+                'status' => 0,
                 'heart' => 0
 
             ],
